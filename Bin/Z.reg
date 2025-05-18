@@ -1,0 +1,1306 @@
+Windows Registry Editor Version 5.00
+
+; Restrictions
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Srp\Gp]
+"RuleCount"=dword:00000000
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SRPV2]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers]
+"DefaultLevel"=dword:00000000
+"TransparentEnabled"=dword:00000002
+"PolicyScope"=dword:00000001
+"AuthenticodeEnabled"=dword:00040000
+"ExecutableTypes"=hex(7):5a,00,4f,00,4f,00,00,00,5a,00,4c,00,4f,00,00,00,5a,00,\
+  46,00,53,00,45,00,4e,00,44,00,54,00,4f,00,54,00,41,00,52,00,47,00,45,00,54,\
+  00,00,00,5a,00,00,00,58,00,5a,00,00,00,58,00,53,00,4c,00,00,00,58,00,50,00,\
+  53,00,00,00,58,00,50,00,49,00,00,00,58,00,4e,00,4b,00,00,00,58,00,4d,00,4c,\
+  00,00,00,58,00,4c,00,57,00,00,00,58,00,4c,00,54,00,58,00,00,00,58,00,4c,00,\
+  54,00,4d,00,00,00,58,00,4c,00,54,00,00,00,58,00,4c,00,53,00,58,00,00,00,58,\
+  00,4c,00,53,00,4d,00,00,00,58,00,4c,00,53,00,42,00,00,00,58,00,4c,00,53,00,\
+  00,00,58,00,4c,00,4d,00,00,00,58,00,4c,00,4c,00,00,00,58,00,4c,00,44,00,00,\
+  00,58,00,4c,00,43,00,00,00,58,00,4c,00,42,00,00,00,58,00,4c,00,41,00,4d,00,\
+  00,00,58,00,4c,00,41,00,00,00,58,00,49,00,50,00,00,00,58,00,42,00,41,00,50,\
+  00,00,00,58,00,41,00,52,00,00,00,57,00,57,00,4c,00,00,00,57,00,53,00,43,00,\
+  00,00,57,00,53,00,00,00,57,00,4c,00,4c,00,00,00,57,00,49,00,5a,00,00,00,57,\
+  00,45,00,42,00,53,00,49,00,54,00,45,00,00,00,57,00,45,00,42,00,50,00,4e,00,\
+  50,00,00,00,57,00,45,00,42,00,4c,00,4f,00,43,00,00,00,57,00,42,00,4b,00,00,\
+  00,57,00,41,00,53,00,00,00,56,00,58,00,44,00,00,00,56,00,53,00,57,00,00,00,\
+  56,00,53,00,54,00,00,00,56,00,53,00,53,00,00,00,56,00,53,00,4d,00,41,00,43,\
+  00,52,00,4f,00,53,00,00,00,56,00,48,00,44,00,58,00,00,00,56,00,48,00,44,00,\
+  00,00,56,00,42,00,50,00,00,00,56,00,42,00,00,00,54,00,5a,00,00,00,54,00,58,\
+  00,5a,00,00,00,54,00,53,00,50,00,00,00,54,00,50,00,5a,00,00,00,54,00,4f,00,\
+  4f,00,4c,00,00,00,54,00,4d,00,50,00,00,00,54,00,4c,00,42,00,00,00,54,00,48,\
+  00,45,00,4d,00,45,00,00,00,54,00,47,00,5a,00,00,00,54,00,45,00,52,00,4d,00,\
+  49,00,4e,00,41,00,4c,00,00,00,54,00,45,00,52,00,4d,00,00,00,54,00,42,00,5a,\
+  00,00,00,54,00,41,00,5a,00,00,00,54,00,41,00,52,00,00,00,53,00,59,00,53,00,\
+  00,00,53,00,57,00,46,00,00,00,53,00,54,00,4d,00,00,00,53,00,50,00,4c,00,00,\
+  00,53,00,4c,00,4b,00,00,00,53,00,4c,00,44,00,58,00,00,00,53,00,4c,00,44,00,\
+  4d,00,00,00,53,00,49,00,54,00,00,00,53,00,48,00,53,00,00,00,53,00,48,00,42,\
+  00,00,00,53,00,45,00,54,00,54,00,49,00,4e,00,47,00,43,00,4f,00,4e,00,54,00,\
+  45,00,4e,00,54,00,2d,00,4d,00,53,00,00,00,53,00,45,00,41,00,52,00,43,00,48,\
+  00,2d,00,4d,00,53,00,00,00,53,00,45,00,41,00,52,00,43,00,48,00,43,00,4f,00,\
+  4e,00,4e,00,45,00,43,00,54,00,4f,00,52,00,2d,00,4d,00,53,00,00,00,53,00,45,\
+  00,41,00,00,00,53,00,43,00,54,00,00,00,53,00,43,00,46,00,00,00,52,00,54,00,\
+  46,00,00,00,52,00,51,00,59,00,00,00,52,00,50,00,59,00,00,00,52,00,45,00,56,\
+  00,00,00,52,00,45,00,47,00,00,00,52,00,42,00,00,00,52,00,41,00,52,00,00,00,\
+  52,00,30,00,39,00,00,00,52,00,30,00,38,00,00,00,52,00,30,00,37,00,00,00,52,\
+  00,30,00,36,00,00,00,52,00,30,00,35,00,00,00,52,00,30,00,34,00,00,00,52,00,\
+  30,00,33,00,00,00,52,00,30,00,32,00,00,00,52,00,30,00,31,00,00,00,52,00,30,\
+  00,30,00,00,00,50,00,59,00,5a,00,57,00,00,00,50,00,59,00,5a,00,00,00,50,00,\
+  59,00,58,00,00,00,50,00,59,00,57,00,5a,00,00,00,50,00,59,00,57,00,00,00,50,\
+  00,59,00,54,00,00,00,50,00,59,00,50,00,00,00,50,00,59,00,4f,00,00,00,50,00,\
+  59,00,49,00,00,00,50,00,59,00,44,00,45,00,00,00,50,00,59,00,44,00,00,00,50,\
+  00,59,00,43,00,00,00,50,00,59,00,33,00,00,00,50,00,59,00,00,00,50,00,58,00,\
+  44,00,00,00,50,00,53,00,54,00,52,00,45,00,47,00,00,00,50,00,53,00,54,00,00,\
+  00,50,00,53,00,44,00,4d,00,31,00,00,00,50,00,53,00,44,00,31,00,00,00,50,00,\
+  52,00,4e,00,00,00,50,00,52,00,49,00,4e,00,54,00,45,00,52,00,45,00,58,00,50,\
+  00,4f,00,52,00,54,00,00,00,50,00,52,00,47,00,00,00,50,00,52,00,46,00,00,00,\
+  50,00,50,00,54,00,58,00,00,00,50,00,50,00,54,00,4d,00,00,00,50,00,50,00,54,\
+  00,00,00,50,00,50,00,53,00,58,00,00,00,50,00,50,00,53,00,4d,00,00,00,50,00,\
+  50,00,53,00,00,00,50,00,50,00,41,00,4d,00,00,00,50,00,50,00,41,00,00,00,50,\
+  00,4f,00,54,00,58,00,00,00,50,00,4f,00,54,00,4d,00,00,00,50,00,4f,00,54,00,\
+  00,00,50,00,4c,00,47,00,00,00,50,00,4c,00,00,00,50,00,4b,00,47,00,00,00,50,\
+  00,49,00,46,00,00,00,50,00,49,00,00,00,50,00,45,00,52,00,4c,00,00,00,50,00,\
+  43,00,44,00,00,00,50,00,41,00,00,00,4f,00,53,00,44,00,00,00,4f,00,51,00,59,\
+  00,00,00,4f,00,50,00,53,00,00,00,4f,00,4e,00,45,00,00,00,4f,00,44,00,53,00,\
+  00,00,4e,00,54,00,46,00,53,00,00,00,4e,00,53,00,48,00,00,00,4e,00,4c,00,53,\
+  00,00,00,4d,00,59,00,44,00,4f,00,43,00,53,00,00,00,4d,00,55,00,49,00,00,00,\
+  4d,00,53,00,55,00,00,00,4d,00,53,00,54,00,00,00,4d,00,53,00,50,00,00,00,4d,\
+  00,53,00,48,00,58,00,4d,00,4c,00,00,00,4d,00,53,00,48,00,32,00,58,00,4d,00,\
+  4c,00,00,00,4d,00,53,00,48,00,32,00,00,00,4d,00,53,00,48,00,31,00,58,00,4d,\
+  00,4c,00,00,00,4d,00,53,00,48,00,31,00,00,00,4d,00,53,00,48,00,00,00,4d,00,\
+  53,00,43,00,00,00,4d,00,4f,00,46,00,00,00,4d,00,4d,00,43,00,00,00,4d,00,48,\
+  00,54,00,4d,00,4c,00,00,00,4d,00,48,00,54,00,00,00,4d,00,44,00,5a,00,00,00,\
+  4d,00,44,00,57,00,00,00,4d,00,44,00,54,00,00,00,4d,00,44,00,4e,00,00,00,4d,\
+  00,44,00,46,00,00,00,4d,00,44,00,45,00,00,00,4d,00,44,00,42,00,00,00,4d,00,\
+  44,00,41,00,00,00,4d,00,43,00,4c,00,00,00,4d,00,43,00,46,00,00,00,4d,00,41,\
+  00,59,00,00,00,4d,00,41,00,57,00,00,00,4d,00,41,00,56,00,00,00,4d,00,41,00,\
+  55,00,00,00,4d,00,41,00,54,00,00,00,4d,00,41,00,53,00,00,00,4d,00,41,00,52,\
+  00,00,00,4d,00,41,00,51,00,00,00,4d,00,41,00,50,00,49,00,4d,00,41,00,49,00,\
+  4c,00,00,00,4d,00,41,00,4e,00,49,00,46,00,45,00,53,00,54,00,00,00,4d,00,41,\
+  00,4d,00,00,00,4d,00,41,00,47,00,00,00,4d,00,41,00,46,00,00,00,4d,00,41,00,\
+  44,00,00,00,4c,00,5a,00,48,00,00,00,4c,00,4f,00,43,00,41,00,4c,00,00,00,4c,\
+  00,49,00,42,00,52,00,41,00,52,00,59,00,2d,00,4d,00,53,00,00,00,4c,00,48,00,\
+  41,00,00,00,4c,00,44,00,42,00,00,00,4c,00,41,00,43,00,43,00,44,00,42,00,00,\
+  00,4b,00,53,00,48,00,00,00,4a,00,4f,00,42,00,00,00,4a,00,4e,00,4c,00,50,00,\
+  00,00,4a,00,41,00,52,00,00,00,49,00,54,00,53,00,00,00,49,00,53,00,50,00,00,\
+  00,49,00,53,00,4f,00,00,00,49,00,51,00,59,00,00,00,49,00,4e,00,53,00,00,00,\
+  49,00,4e,00,49,00,00,00,49,00,4d,00,47,00,00,00,49,00,4d,00,45,00,00,00,49,\
+  00,45,00,00,00,48,00,57,00,50,00,00,00,48,00,54,00,54,00,00,00,48,00,54,00,\
+  4d,00,00,00,48,00,54,00,43,00,00,00,48,00,54,00,41,00,00,00,48,00,51,00,58,\
+  00,00,00,48,00,50,00,4a,00,00,00,48,00,4c,00,50,00,00,00,48,00,45,00,58,00,\
+  00,00,47,00,5a,00,00,00,47,00,52,00,50,00,00,00,47,00,4c,00,4b,00,00,00,47,\
+  00,41,00,44,00,47,00,45,00,54,00,00,00,46,00,58,00,50,00,00,00,46,00,4f,00,\
+  4e,00,00,00,46,00,41,00,54,00,00,00,45,00,4c,00,46,00,00,00,45,00,43,00,46,\
+  00,00,00,44,00,52,00,56,00,00,00,44,00,51,00,59,00,00,00,44,00,4f,00,54,00,\
+  58,00,00,00,44,00,4f,00,54,00,4d,00,00,00,44,00,4f,00,54,00,00,00,44,00,4f,\
+  00,43,00,4d,00,00,00,44,00,4f,00,43,00,42,00,00,00,44,00,4f,00,43,00,00,00,\
+  44,00,4d,00,47,00,00,00,44,00,4c,00,4c,00,00,00,44,00,49,00,52,00,00,00,44,\
+  00,49,00,46,00,00,00,44,00,49,00,41,00,47,00,43,00,41,00,42,00,00,00,44,00,\
+  45,00,53,00,4b,00,54,00,4f,00,50,00,00,00,44,00,45,00,53,00,4b,00,4c,00,49,\
+  00,4e,00,4b,00,00,00,44,00,45,00,52,00,00,00,44,00,43,00,52,00,00,00,44,00,\
+  42,00,00,00,43,00,53,00,56,00,00,00,43,00,53,00,48,00,00,00,43,00,52,00,58,\
+  00,00,00,43,00,52,00,54,00,00,00,43,00,52,00,41,00,5a,00,59,00,00,00,43,00,\
+  50,00,58,00,00,00,43,00,4f,00,4d,00,4d,00,41,00,4e,00,44,00,00,00,43,00,4e,\
+  00,56,00,00,00,43,00,4e,00,54,00,00,00,43,00,4c,00,42,00,00,00,43,00,4c,00,\
+  41,00,53,00,53,00,00,00,43,00,4c,00,41,00,00,00,43,00,48,00,4d,00,00,00,43,\
+  00,48,00,49,00,00,00,43,00,46,00,47,00,00,00,43,00,45,00,52,00,00,00,43,00,\
+  44,00,42,00,00,00,43,00,41,00,42,00,00,00,42,00,5a,00,49,00,50,00,32,00,00,\
+  00,42,00,5a,00,49,00,50,00,00,00,42,00,5a,00,32,00,00,00,42,00,5a,00,00,00,\
+  42,00,41,00,53,00,00,00,41,00,58,00,00,00,41,00,53,00,58,00,00,00,41,00,53,\
+  00,50,00,58,00,00,00,41,00,53,00,50,00,00,00,41,00,53,00,41,00,00,00,41,00,\
+  52,00,4a,00,00,00,41,00,52,00,43,00,00,00,41,00,50,00,50,00,52,00,45,00,46,\
+  00,2d,00,4d,00,53,00,00,00,41,00,50,00,50,00,4c,00,49,00,43,00,41,00,54,00,\
+  49,00,4f,00,4e,00,00,00,41,00,50,00,50,00,00,00,41,00,49,00,52,00,00,00,41,\
+  00,44,00,50,00,00,00,41,00,44,00,4e,00,00,00,41,00,44,00,45,00,00,00,41,00,\
+  44,00,00,00,41,00,43,00,4d,00,00,00,41,00,43,00,43,00,44,00,55,00,00,00,41,\
+  00,43,00,43,00,44,00,54,00,00,00,41,00,43,00,43,00,44,00,52,00,00,00,41,00,\
+  43,00,43,00,44,00,45,00,00,00,41,00,43,00,43,00,44,00,41,00,00,00,49,00,4e,\
+  00,46,00,00,00,4d,00,53,00,49,00,00,00,50,00,53,00,31,00,00,00,57,00,50,00,\
+  43,00,00,00,00,00
+"Levels"=dword:00071000
+"LogFileName"="C:\\Windows\\system32\\LogFiles\\SAFER.LOG"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Hashes]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{00B92F9B-EE8C-41D5-9AA1-B33D35DB49FB}]
+"Description"="Alle lokalen Pfade"
+"ItemData"="?:\\"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{00B97DA0-641E-474E-BDCC-3F2294507AC3}]
+"Description"="Alle Netzwerkpfade"
+"ItemData"="\\\\"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{00B9A46A-64A1-4BE5-A896-6E0B4B1C502C}]
+"Description"="System Volume Information"
+"ItemData"="?:\\System Volume Information"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{00B9D2EC-FB61-4161-1341-3DBEF03AF18E}]
+"Description"="Papierkorb (Windows XP/2003 [R2])"
+"ItemData"="?:\\RECYCLE?"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{00B9DFE4-ED08-4328-B355-4BC63D6267B2}]
+"Description"="Papierkorb (Windows Vista/7/8/10/11)"
+"ItemData"="?:\\$RECYCLE.BIN"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{06FFDEFE-4EC8-4CCB-BA70-86C7054B2AC6}]
+"Description"="%ProgramData%"
+"ItemData"="C:\\ProgramData"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{10011479-708B-41F7-A992-CF1FD376BBB7}]
+"Description"="%SystemRoot%\\SysNative\\RunAs.Exe"
+"ItemData"="C:\\Windows\\SysNative\\RunAs.Exe"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1001AAF1-749F-49F4-8010-297BD6CA33A0}]
+"Description"="%SystemRoot%\\System32\\RunAs.Exe"
+"ItemData"="C:\\Windows\\System32\\RunAs.Exe"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1001DEEE-128A-4A4D-A684-2C7035340E4B}]
+"Description"="%SystemRoot%\\SysWoW64\\RunAs.Exe"
+"ItemData"="C:\\Windows\\SysWoW64\\RunAs.Exe"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3301}]
+"Description"="*LNK : Global shortcuts deny"
+"SaferFlags"=dword:00000000
+"ItemData"="protected"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3302}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SysWOW64\\FxsTmp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3303}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SysWOW64\\Com\\dmp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3304}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\FxsTmp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3305}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\debug\\WIA"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3306}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\Registration\\CRMLog"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3307}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\spool\\drivers\\color"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3308}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\Com\\dmp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3309}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\Tasks"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3310}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\tracing"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3311}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\Tasks"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3312}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\Temp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3313}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\spool\\PRINTERS"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3314}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SysWOW64\\Tasks"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3315}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\catroot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3316}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3317}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\spool\\SERVERS"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3318}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\System32\\Tasks_Migrated"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3319}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\servicing\\Packages"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{1016bbe0-a716-428b-822e-5E544B6A3320}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\servicing\\Sessions"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{2742F840-C2D8-4EB3-A486-0A9D0879F29F}]
+"Description"="Macromedia Flash"
+"ItemData"="C:\\Windows\\System32\\Macromed\\Flash"
+"LastModified"=hex(b):10,c3,8a,19,c6,e3,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC19}]
+"Description"="*LNK : Start menu (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,2a,00,\
+  2e,00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC20}]
+"Description"="*LNK : Start menu programs (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,\
+  00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC21}]
+"Description"="*LNK : Start menu programs subfolders (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,5c,00,2a,00,2e,00,6c,\
+  00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC22}]
+"Description"="*LNK : Start menu"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\*.lnk\\*"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC23}]
+"Description"="*LNK : Start menu programs"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*.lnk\\*"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC24}]
+"Description"="*LNK : Start menu programs subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*\\*.lnk\\*"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC25}]
+"Description"="*LNK : Start menu programs sub-subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*\\*\\*.lnk\\*"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{525B53C3-AB48-4EC1-BA1F-A1EF4146FC26}]
+"Description"="*LNK : Start menu programs sub-subfolders (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,5c,00,2a,00,5c,00,2a,\
+  00,2e,00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{5d175a36-ec0e-4585-a588-95a5f942b3a3}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\Hard_Configurator\\Tools"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{89a0fd77-ed0c-4e30-91ff-9d51428d2f21}]
+"Description"="*LNK : Power menu group 1"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,31,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{89a0fd77-ed0c-4e30-91ff-9d51428d2f22}]
+"Description"="*LNK : Power menu group 2"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,32,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{89a0fd77-ed0c-4e30-91ff-9d51428d2f23}]
+"Description"="*LNK : Power menu group 3"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,33,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C639}]
+"Description"="*LNK : Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,4f,00,6e,00,65,00,44,00,72,00,69,00,76,00,65,00,5c,\
+  00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,00,2e,00,6c,00,6e,00,\
+  6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C640}]
+"Description"="*LNK : Desktop subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,4f,00,6e,00,65,00,44,00,72,00,69,00,76,00,65,00,5c,\
+  00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C641}]
+"Description"="*LNK : Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,\
+  00,2e,00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C642}]
+"Description"="*LNK : Desktop subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,\
+  00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C643}]
+"Description"="*LNK : Public Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,50,00,\
+  75,00,62,00,6c,00,69,00,63,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,\
+  00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C644}]
+"Description"="*LNK : TaskBar (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,54,00,61,00,\
+  73,00,6b,00,42,00,61,00,72,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,5c,00,2a,\
+  00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C645}]
+"Description"="*LNK : Quick Launch (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,2a,00,2e,\
+  00,6c,00,6e,00,6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C646}]
+"Description"="*LNK : ImplicitAppShortcuts (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,49,00,6d,00,\
+  70,00,6c,00,69,00,63,00,69,00,74,00,41,00,70,00,70,00,53,00,68,00,6f,00,72,\
+  00,74,00,63,00,75,00,74,00,73,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,5c,00,\
+  2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{A4BFCC3A-DB2C-424C-B029-7FE99A87C647}]
+"Description"="*LNK : ImplicitAppShortcuts subfolder (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,49,00,6d,00,\
+  70,00,6c,00,69,00,63,00,69,00,74,00,41,00,70,00,70,00,53,00,68,00,6f,00,72,\
+  00,74,00,63,00,75,00,74,00,73,00,5c,00,2a,00,5c,00,2a,00,2e,00,6c,00,6e,00,\
+  6b,00,5c,00,2a,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A69B6C-8792-426D-89AB-CE11B1DB3017}]
+"Description"="%SystemRoot%\\CSC"
+"ItemData"="C:\\Windows\\CSC"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A80AF5-D291-4464-8D15-A877F332A666}]
+"Description"="%SystemRoot%\\Debug\\WIA"
+"ItemData"="C:\\Windows\\Debug\\WIA"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A84AEC-7487-494A-891A-09EB13942A77}]
+"Description"="%SystemRoot%\\Debug\\WIA:*"
+"ItemData"="C:\\Windows\\Debug\\WIA:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A879D0-94C6-4145-9039-19A1DD94E2F5}]
+"Description"="%SystemRoot%\\Logs"
+"ItemData"="C:\\Windows\\Logs"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A8C62E-75B6-4447-B54F-B351757BF34E}]
+"Description"="%SystemRoot%\\Media"
+"ItemData"="C:\\Windows\\Media"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A8F941-D7CB-4042-8C04-AAA87ADB8FC2}]
+"Description"="%SystemRoot%\\Registration\\CRMLog"
+"ItemData"="C:\\Windows\\Registration\\CRMLog"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A90615-4ABE-4937-879C-47C19F107CC8}]
+"Description"="%SystemRoot%\\Registration\\CRMLog:*"
+"ItemData"="C:\\Windows\\Registration\\CRMLog:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A918B9-7529-44E7-9C6D-5098F8B1D90F}]
+"Description"="%SystemRoot%\\ServiceProfiles"
+"ItemData"="C:\\Windows\\ServiceProfiles"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A919D4-AF0E-44F1-A205-414D8F39E12B}]
+"Description"="%SystemRoot%\\System32\\AppMgmt"
+"ItemData"="C:\\Windows\\System32\\AppMgmt"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A920B3-02C4-4F7A-BA23-D282A57394D6}]
+"Description"="%SystemRoot%\\System32\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}"
+"ItemData"="C:\\Windows\\system32\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A92CBF-44F7-4E1E-A29D-FA166125C8B8}]
+"Description"="%SystemRoot%\\System32\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}:*"
+"ItemData"="C:\\Windows\\system32\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A945C6-411A-4C85-9C98-1A196616BCC9}]
+"Description"="%SystemRoot%\\System32\\COM\\Dmp"
+"ItemData"="C:\\Windows\\System32\\COM\\Dmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A958A9-54CF-4336-8123-D7FB74D5CD06}]
+"Description"="%SystemRoot%\\System32\\COM\\Dmp:*"
+"ItemData"="C:\\Windows\\System32\\COM\\Dmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7A98E1D-1577-134F-9B9C-75278D6318EB}]
+"Description"="%SystemRoot%\\System32\\Config"
+"ItemData"="C:\\Windows\\System32\\Config"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AA3C3E-3E5D-48D1-9E46-E3DDDBFE0B5B}]
+"Description"="%SystemRoot%\\System32\\Drivers\\Etc"
+"ItemData"="C:\\Windows\\System32\\Drivers\\Etc"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AA71AB-90A6-4621-82B1-FF348DAD6D85}]
+"Description"="%SystemRoot%\\System32\\FxsTmp"
+"ItemData"="C:\\Windows\\System32\\FxsTmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AAB6D7-0010-4BA1-9AD1-A440202167D3}]
+"Description"="%SystemRoot%\\System32\\FxsTmp:*"
+"ItemData"="C:\\Windows\\System32\\FxsTmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AAC585-C34F-4BFD-8941-AAF1B1AD77E5}]
+"Description"="%SystemRoot%\\System32\\LogFiles\\WMI"
+"ItemData"="C:\\Windows\\System32\\LogFiles\\WMI"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AAE749-8B75-4BE5-84C3-C728EC2A57DF}]
+"Description"="%SystemRoot%\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys"
+"ItemData"="C:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AAFAC1-17A0-4834-A55C-7B9FCEBEB4FB}]
+"Description"="%SystemRoot%\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys:*"
+"ItemData"="C:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AB3254-7E0F-4213-8F86-749F5EDAEDA4}]
+"Description"="%SystemRoot%\\System32\\Spool\\Drivers\\Color"
+"ItemData"="C:\\Windows\\System32\\Spool\\Drivers\\Color"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AB32D0-7400-45F8-9646-7C954FC2B8FB}]
+"Description"="%SystemRoot%\\System32\\Spool\\Drivers\\Color:*"
+"ItemData"="C:\\Windows\\System32\\Spool\\Drivers\\Color:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AB3EA3-E425-40B2-B4F5-8163DE60B306}]
+"Description"="%SystemRoot%\\System32\\Spool\\Printers"
+"ItemData"="C:\\Windows\\System32\\Spool\\Printers"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AB4C34-83EF-4AAD-A1B9-12F7AA18487B}]
+"Description"="%SystemRoot%\\System32\\Spool\\Printers:*"
+"ItemData"="C:\\Windows\\System32\\Spool\\Printers:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AB5787-EB67-4727-8DE8-CEC6106EA3F6}]
+"Description"="%SystemRoot%\\System32\\Spool\\Servers"
+"ItemData"="C:\\Windows\\System32\\Spool\\Servers"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ABA2A7-2D33-42A9-AC8B-A5FEDE1DF6FA}]
+"Description"="%SystemRoot%\\System32\\Spool\\Servers:*"
+"ItemData"="C:\\Windows\\System32\\Spool\\Servers:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ABAF83-F923-4DD8-ADF2-98D4D48842BE}]
+"Description"="%SystemRoot%\\System32\\Tasks"
+"ItemData"="C:\\Windows\\System32\\Tasks"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ABB2D1-A6AF-4D87-AE2C-838C6524EDA4}]
+"Description"="%SystemRoot%\\System32\\Tasks:*"
+"ItemData"="C:\\Windows\\System32\\Tasks:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ABC579-730B-463E-A23D-30778998D7A3}]
+"Description"="%SystemRoot%\\System32\\Tasks_Migrated"
+"ItemData"="C:\\Windows\\System32\\Tasks_Migrated"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ABD4BC-FD03-4473-9468-D6707BD6CA20}]
+"Description"="%SystemRoot%\\System32\\Tasks_Migrated:*"
+"ItemData"="C:\\Windows\\System32\\Tasks_Migrated:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AC0754-8034-4F7B-B12B-C68A5002E657}]
+"Description"="%SystemRoot%\\SysNative\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}"
+"ItemData"="C:\\Windows\\SysNative\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AC11AA-68C6-4994-B232-4B1930D3E799}]
+"Description"="%SystemRoot%\\SysNative\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}:*"
+"ItemData"="C:\\Windows\\SysNative\\CatRoot2\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AC1CC0-9FF7-4D8D-876C-948707693763}]
+"Description"="%SystemRoot%\\SysNative\\COM\\Dmp"
+"ItemData"="C:\\Windows\\SysNative\\COM\\Dmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AC2154-25AA-4993-9290-6609A76C03F1}]
+"Description"="%SystemRoot%\\SysNative\\COM\\Dmp:*"
+"ItemData"="C:\\Windows\\SysNative\\COM\\Dmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AC48BA-7F96-4EEC-9946-7E7417BBDC67}]
+"Description"="%SystemRoot%\\SysNative\\Config"
+"ItemData"="C:\\Windows\\SysNative\\Config"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACA63F-AC8E-4EFF-9F6A-15BBE60F1402}]
+"Description"="%SystemRoot%\\SysNative\\FxsTmp"
+"ItemData"="C:\\Windows\\SysNative\\FxsTmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACA930-BC79-4A8F-B118-C540259C08EC}]
+"Description"="%SystemRoot%\\SysNative\\FxsTmp:*"
+"ItemData"="C:\\Windows\\SysNative\\FxsTmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACAC25-9EAB-44E5-DE51-6FA35DBCB0D3}]
+"Description"="%SystemRoot%\\SysNative\\LogFiles\\WMI"
+"ItemData"="C:\\Windows\\SysNative\\LogFiles\\WMI"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACAFD8-4F1E-4647-AFB4-ADBD728FBD40}]
+"Description"="%SystemRoot%\\SysNative\\Microsoft\\Crypto\\RSA\\MachineKeys"
+"ItemData"="C:\\Windows\\SysNative\\Microsoft\\Crypto\\RSA\\MachineKeys"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACB0A2-8718-4D8E-BA26-1C31795EAF9B}]
+"Description"="%SystemRoot%\\SysNative\\Microsoft\\Crypto\\RSA\\MachineKeys:*"
+"ItemData"="C:\\Windows\\SysNative\\Microsoft\\Crypto\\RSA\\MachineKeys:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACB4E9-42DB-48D9-B0ED-FD7352942E0D}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Drivers\\Color"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Drivers\\Color"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACB7C1-0CF7-4F05-806F-2A30D4C8ABFD}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Drivers\\Color:*"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Drivers\\Color:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACBB4C-267E-4158-99E3-096F6BC91C94}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Printers"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Printers"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACBEE8-F68F-4D58-8F36-CA5DC15D0969}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Printers:*"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Printers:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACCCFF-CF45-4D7C-B94B-5FB48C5A1F0D}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Servers"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Servers"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACD77E-C11D-4277-AF6B-600B5C6ADEB7}]
+"Description"="%SystemRoot%\\SysNative\\Spool\\Servers:*"
+"ItemData"="C:\\Windows\\SysNative\\Spool\\Servers:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACE1FA-9898-48CF-AD02-79364398B3AC}]
+"Description"="%SystemRoot%\\SysNative\\Tasks"
+"ItemData"="C:\\Windows\\SysNative\\Tasks"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACE652-E740-4011-B274-F0B6D16E8240}]
+"Description"="%SystemRoot%\\SysNative\\Tasks:*"
+"ItemData"="C:\\Windows\\SysNative\\Tasks:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACEAA8-1CEE-4D0B-B025-6F6627586F40}]
+"Description"="%SystemRoot%\\SysNative\\Tasks_Migrated"
+"ItemData"="C:\\Windows\\SysNative\\Tasks_Migrated"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACEECC-73A2-458A-8760-45EEFC65BFCF}]
+"Description"="%SystemRoot%\\SysNative\\Tasks_Migrated:*"
+"ItemData"="C:\\Windows\\SysNative\\Tasks_Migrated:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ACF3C4-F983-4B2F-9715-E2A254DBD4C5}]
+"Description"="%SystemRoot%\\SysWoW64\\COM\\Dmp"
+"ItemData"="C:\\Windows\\SysWoW64\\COM\\Dmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AD2E28-11F1-4DFC-9A4B-8C5DCCE49AD4}]
+"Description"="%SystemRoot%\\Tasks"
+"ItemData"="C:\\Windows\\Tasks"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AD2E44-65DA-4361-817E-90D80F1CF631}]
+"Description"="%SystemRoot%\\Tasks:*"
+"ItemData"="C:\\Windows\\Tasks:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AD3132-2585-42E3-84A9-EB500E0CD407}]
+"Description"="%SystemRoot%\\SysWoW64\\COM\\Dmp:*"
+"ItemData"="C:\\Windows\\SysWoW64\\COM\\Dmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AD33EF-639B-44A5-A636-7EA11EBDC769}]
+"Description"="%SystemRoot%\\SysWoW64\\Config"
+"ItemData"="C:\\Windows\\SysWoW64\\Config"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AD3418-5BF7-4C2B-AEAF-711D6F9914E0}]
+"Description"="%SystemRoot%\\SysWoW64\\FxsTmp"
+"ItemData"="C:\\Windows\\SysWoW64\\FxsTmp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ADA7B0-96EE-46A2-8BE4-ED0A088DAE7C}]
+"Description"="%SystemRoot%\\SysWoW64\\FxsTmp:*"
+"ItemData"="C:\\Windows\\SysWoW64\\FxsTmp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ADAAE2-ECB6-4F67-9866-EBF3C16FC497}]
+"Description"="%SystemRoot%\\SysWoW64\\Tasks"
+"ItemData"="C:\\Windows\\SysWoW64\\Tasks"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ADC554-00AF-4BDE-A192-FF2914E2653F}]
+"Description"="%SystemRoot%\\Temp"
+"ItemData"="C:\\Windows\\Temp"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ADD2B8-A529-491E-BB39-4F7694557B88}]
+"Description"="%SystemRoot%\\Temp:*"
+"ItemData"="C:\\Windows\\Temp:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7ADD848-DED7-472F-8D27-0C4080D18F17}]
+"Description"="%SystemRoot%\\SysWoW64\\Tasks:*"
+"ItemData"="C:\\Windows\\SysWoW64\\Tasks:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AE1B00-211E-4076-A064-C0BD8EAFA742}]
+"Description"="%SystemRoot%\\Temporary Internet Files"
+"ItemData"="C:\\Windows\\Temporary Internet Files"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AE8F25-7D29-4ABE-A5F3-4E7F99FA5B74}]
+"Description"="%SystemRoot%\\Tracing"
+"ItemData"="C:\\Windows\\Tracing"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AE9BE3-3292-47C3-AC36-65E40B2818DA}]
+"Description"="%SystemRoot%\\Tracing:*"
+"ItemData"="C:\\Windows\\Tracing:*"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\Paths\{C7AF2ED3-7F52-49AA-9970-712A1D8FB8F5}]
+"Description"="%SystemRoot%\\Web"
+"ItemData"="C:\\Windows\\Web"
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones\{643ADE30-2030-45AA-B54D-6C407941D825}]
+"ItemData"=dword:00000000
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones\{643ADE31-2030-45AA-B54D-6C407941D825}]
+"ItemData"=dword:00000001
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones\{643ADE32-2030-45AA-B54D-6C407941D825}]
+"ItemData"=dword:00000002
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones\{643ADE33-2030-45AA-B54D-6C407941D825}]
+"ItemData"=dword:00000003
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\0\URLZones\{643ADE34-2030-45AA-B54D-6C407941D825}]
+"ItemData"=dword:00000004
+"LastModified"=hex(b):c0,14,54,6e,8d,f9,c5,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\131072]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\131072\Hashes]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\131072\Paths]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\131072\UrlZones]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Hashes]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{1016bbe0-a716-428b-822e-DE544B6A3520}]
+"Description"="*Allow EXE files"
+"SaferFlags"=dword:00000000
+"ItemData"="*.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{1016bbe0-a716-428b-822e-DE544B6A3521}]
+"Description"="*Allow TMP files"
+"SaferFlags"=dword:00000000
+"ItemData"="*.tmp"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{1016bbe0-a716-428b-822e-DE544B6A3522}]
+"Description"="*Allow MSI files"
+"SaferFlags"=dword:00000000
+"ItemData"="*.msi"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{191CD7FA-F240-4A17-8986-94D480A6C8CA}]
+"Description"="%SystemRoot%"
+"ItemData"="C:\\Windows"
+"LastModified"=hex(b):f0,8f,aa,44,f3,f8,c6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC19}]
+"Description"="*LNK : Start menu (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,2a,00,\
+  2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC20}]
+"Description"="*LNK : Start menu programs (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,\
+  00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC21}]
+"Description"="*LNK : Start menu programs subfolders (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,5c,00,2a,00,2e,00,6c,\
+  00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC22}]
+"Description"="*LNK : Start menu"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\*.lnk"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC23}]
+"Description"="*LNK : Start menu programs"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*.lnk"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC24}]
+"Description"="*LNK : Start menu programs subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*\\*.lnk"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC25}]
+"Description"="*LNK : Start menu programs sub-subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\*\\*\\*.lnk"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{625B53C3-AB48-4EC1-BA1F-A1EF4146FC26}]
+"Description"="*LNK : Start menu programs sub-subfolders (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,\
+  00,53,00,74,00,61,00,72,00,74,00,20,00,4d,00,65,00,6e,00,75,00,5c,00,50,00,\
+  72,00,6f,00,67,00,72,00,61,00,6d,00,73,00,5c,00,2a,00,5c,00,2a,00,5c,00,2a,\
+  00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{6D809377-6AF0-444B-8957-A3773F02200E}]
+"Description"="*Default : Program Files on 64 bits"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,\
+  4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,6f,00,66,\
+  00,74,00,77,00,61,00,72,00,65,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,\
+  6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,\
+  00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,\
+  6e,00,5c,00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,57,00,36,00,34,00,33,\
+  00,32,00,44,00,69,00,72,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}]
+"Description"="*Default : Program Files (x86) on 64 bits"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,\
+  4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,6f,00,66,\
+  00,74,00,77,00,61,00,72,00,65,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,\
+  6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,\
+  00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,\
+  6e,00,5c,00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,\
+  00,73,00,44,00,69,00,72,00,20,00,28,00,78,00,38,00,36,00,29,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{905E63B6-C1BF-494E-B29C-65B732D3D21A}]
+"Description"="*Default : Program Files (default)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,\
+  4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,6f,00,66,\
+  00,74,00,77,00,61,00,72,00,65,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,\
+  6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,\
+  00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,\
+  6e,00,5c,00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,\
+  00,73,00,44,00,69,00,72,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{99a0fd77-ed0c-4e30-91ff-9d51428d2f21}]
+"Description"="*LNK : Power menu group 1"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,31,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{99a0fd77-ed0c-4e30-91ff-9d51428d2f22}]
+"Description"="*LNK : Power menu group 2"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,32,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{99a0fd77-ed0c-4e30-91ff-9d51428d2f23}]
+"Description"="*LNK : Power menu group 3"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,\
+  00,6f,00,63,00,61,00,6c,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,57,00,69,\
+  00,6e,00,58,00,5c,00,47,00,72,00,6f,00,75,00,70,00,33,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C639}]
+"Description"="*LNK : ### Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,43,00,55,00,52,00,52,00,\
+  45,00,4e,00,54,00,5f,00,55,00,53,00,45,00,52,00,5c,00,53,00,4f,00,46,00,54,\
+  00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,\
+  66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,00,75,\
+  00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,6e,00,\
+  5c,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,53,00,68,00,65,\
+  00,6c,00,6c,00,20,00,46,00,6f,00,6c,00,64,00,65,00,72,00,73,00,5c,00,44,00,\
+  65,00,73,00,6b,00,74,00,6f,00,70,00,25,00,2a,00,2e,00,6c,00,6e,00,6b,00,00,\
+  00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C640}]
+"Description"="*LNK : OneDriveDesktop subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,4f,00,6e,00,65,00,44,00,72,00,69,00,76,00,65,00,5c,\
+  00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,00,5c,00,2a,00,2e,00,\
+  6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}]
+"Description"="*LNK : Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,\
+  00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C642}]
+"Description"="*LNK : Desktop subfolders"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,00,5c,00,2a,\
+  00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C643}]
+"Description"="*LNK : Public Desktop"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,50,00,\
+  75,00,62,00,6c,00,69,00,63,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,\
+  00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C644}]
+"Description"="*LNK : TaskBar (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,54,00,61,00,\
+  73,00,6b,00,42,00,61,00,72,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C645}]
+"Description"="*LNK : Quick Launch (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,2a,00,2e,\
+  00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C646}]
+"Description"="*LNK : ImplicitAppShortcuts (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,49,00,6d,00,\
+  70,00,6c,00,69,00,63,00,69,00,74,00,41,00,70,00,70,00,53,00,68,00,6f,00,72,\
+  00,74,00,63,00,75,00,74,00,73,00,5c,00,2a,00,2e,00,6c,00,6e,00,6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{B4BFCC3A-DB2C-424C-B029-7FE99A87C647}]
+"Description"="*LNK : ImplicitAppShortcuts subfolder (AppData\\Roaming)"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,00,49,00,\
+  4c,00,45,00,25,00,5c,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,52,\
+  00,6f,00,61,00,6d,00,69,00,6e,00,67,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,\
+  73,00,6f,00,66,00,74,00,5c,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,00,74,\
+  00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,5c,00,51,00,75,00,\
+  69,00,63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,5c,00,55,00,73,\
+  00,65,00,72,00,20,00,50,00,69,00,6e,00,6e,00,65,00,64,00,5c,00,49,00,6d,00,\
+  70,00,6c,00,69,00,63,00,69,00,74,00,41,00,70,00,70,00,53,00,68,00,6f,00,72,\
+  00,74,00,63,00,75,00,74,00,73,00,5c,00,2a,00,5c,00,2a,00,2e,00,6c,00,6e,00,\
+  6b,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{C77CC673-3BA3-427D-C9DE-76D54F6DC97E}]
+"Description"="%ProgramFiles(x86)%"
+"ItemData"="C:\\Program Files (x86)"
+"LastModified"=hex(b):f0,8f,aa,44,f3,f8,c6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{C77F1D47-1FE1-4E7A-869C-57659099E912}]
+"Description"="%CommonProgramFiles(x86)%"
+"ItemData"="C:\\Program Files (x86)\\Common Files"
+"LastModified"=hex(b):f0,8f,aa,44,f3,f8,c6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{D2C34AB2-529A-46B2-B293-FC853FCE72EA}]
+"Description"="%ProgramFiles%"
+"ItemData"="C:\\Program Files"
+"LastModified"=hex(b):f0,8f,aa,44,f3,f8,c6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{D2C37D40-EA2D-11DC-8F61-0004760DFF53}]
+"Description"="%CommonProgramFiles%"
+"ItemData"="C:\\Program Files\\Common Files"
+"LastModified"=hex(b):f0,8f,aa,44,f3,f8,c6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{D2CA0FDC-56AF-465F-9C2A-AE5B25D4AA90}]
+"Description"="%ProgramData%\\Microsoft\\Windows Defender\\Platform (KB4052623)"
+"ItemData"="C:\\ProgramData\\Microsoft\\Windows Defender\\Platform"
+"LastModified"=hex(b):e0,53,86,62,06,be,d6,01
+"SaferFlags"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{f073d7e6-ec43-4bf6-a2a8-536eb63b03c8}]
+"Description"="*Default : ProgramData\\Microsoft\\Windows Defender"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,\
+  4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,4f,00,46,\
+  00,54,00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,\
+  6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,44,\
+  00,65,00,66,00,65,00,6e,00,64,00,65,00,72,00,5c,00,50,00,72,00,6f,00,64,00,\
+  75,00,63,00,74,00,41,00,70,00,70,00,44,00,61,00,74,00,61,00,50,00,61,00,74,\
+  00,68,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\Paths\{F38BF404-1D43-42F2-9305-67DE0B28FC23}]
+"Description"="*Default : Windows"
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,\
+  4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,6f,00,66,\
+  00,74,00,77,00,61,00,72,00,65,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,\
+  6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,4e,\
+  00,54,00,5c,00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,\
+  73,00,69,00,6f,00,6e,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,\
+  00,6f,00,74,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\262144\URLZones]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\4096]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\4096\Hashes]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\4096\Paths]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\4096\URLZones]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\65536]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\65536\Hashes]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\65536\Paths]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\CodeIdentifiers\65536\URLZones]
+
+; Applocker
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Appx]
+"EnforcementMode"=dword:00000000
+"AllowWindows"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Appx\a9e18c21-ff8f-43cf-b9fc-db40eed693ba]
+"Value"="<FilePublisherRule Id=\"a9e18c21-ff8f-43cf-b9fc-db40eed693ba\" Name=\"(Default Rule) All signed packaged apps\" Description=\"Allows members of the Everyone group to run packaged apps that are signed.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"0.0.0.0\" HighSection=\"*\"/></FilePublisherCondition></Conditions></FilePublisherRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll]
+"EnforcementMode"=dword:00000001
+"AllowWindows"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\03ad165a-4679-48e8-bd94-3f18fcf50615]
+"Value"="<FilePathRule Id=\"03ad165a-4679-48e8-bd94-3f18fcf50615\" Name=\"%OSDRIVE%\\*\" Description=\"\" UserOrGroupSid=\"S-1-1-0\" Action=\"Deny\"><Conditions><FilePathCondition Path=\"%OSDRIVE%\\*\"/></Conditions><Exceptions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"*\" HighSection=\"*\"/></FilePublisherCondition></Exceptions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\18cefcfd-6be9-44a1-9739-25b7db035247]
+"Value"="<FilePathRule Id=\"18cefcfd-6be9-44a1-9739-25b7db035247\" Name=\"%HOT%\\*\" Description=\"\" UserOrGroupSid=\"S-1-1-0\" Action=\"Deny\"><Conditions><FilePathCondition Path=\"%HOT%\\*\"/></Conditions><Exceptions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"*\" HighSection=\"*\"/></FilePublisherCondition></Exceptions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\3737732c-99b7-41d4-9037-9cddfb0de0d0]
+"Value"="<FilePathRule Id=\"3737732c-99b7-41d4-9037-9cddfb0de0d0\" Name=\"(Default Rule) All DLLs located in the Program Files folder\" Description=\"Allows members of the Everyone group to load DLLs that are located in the Program Files folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%PROGRAMFILES%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\911e316f-b917-4acb-8c31-fa70ad457fcc]
+"Value"="<FilePathRule Id=\"911e316f-b917-4acb-8c31-fa70ad457fcc\" Name=\"D:\\*\" Description=\"\" UserOrGroupSid=\"S-1-1-0\" Action=\"Deny\"><Conditions><FilePathCondition Path=\"D:\\*\"/></Conditions><Exceptions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"*\" HighSection=\"*\"/></FilePublisherCondition></Exceptions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\b49a3fd5-51ce-4fb7-8d6c-f49ac4559807]
+"Value"="<FilePathRule Id=\"b49a3fd5-51ce-4fb7-8d6c-f49ac4559807\" Name=\"F:\\*\" Description=\"\" UserOrGroupSid=\"S-1-1-0\" Action=\"Deny\"><Conditions><FilePathCondition Path=\"F:\\*\"/></Conditions><Exceptions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"*\" HighSection=\"*\"/></FilePublisherCondition></Exceptions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\bac4b0bf-6f1b-40e8-8627-8545fa89c8b6]
+"Value"="<FilePathRule Id=\"bac4b0bf-6f1b-40e8-8627-8545fa89c8b6\" Name=\"(Default Rule) Microsoft Windows DLLs\" Description=\"Allows members of the Everyone group to load DLLs located in the Windows folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%WINDIR%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\e3fc6f2a-8e3c-4eba-86ad-1b05723adf18]
+"Value"="<FilePathRule Id=\"e3fc6f2a-8e3c-4eba-86ad-1b05723adf18\" Name=\"E:\\*\" Description=\"\" UserOrGroupSid=\"S-1-1-0\" Action=\"Deny\"><Conditions><FilePathCondition Path=\"E:\\*\"/></Conditions><Exceptions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"*\" HighSection=\"*\"/></FilePublisherCondition></Exceptions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Dll\fe64f59f-6fca-45e5-a731-0f6715327c38]
+"Value"="<FilePathRule Id=\"fe64f59f-6fca-45e5-a731-0f6715327c38\" Name=\"(Default Rule) All DLLs\" Description=\"Allows members of the local Administrators group to load all DLLs.\" UserOrGroupSid=\"S-1-5-32-544\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe]
+"EnforcementMode"=dword:00000000
+"AllowWindows"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe\921cc481-6e17-4653-8f75-050b80acca20]
+"Value"="<FilePathRule Id=\"921cc481-6e17-4653-8f75-050b80acca20\" Name=\"(Default Rule) All files located in the Program Files folder\" Description=\"Allows members of the Everyone group to run applications that are located in the Program Files folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%PROGRAMFILES%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe\a61c8b2c-a319-4cd0-9690-d2177cad7b51]
+"Value"="<FilePathRule Id=\"a61c8b2c-a319-4cd0-9690-d2177cad7b51\" Name=\"(Default Rule) All files located in the Windows folder\" Description=\"Allows members of the Everyone group to run applications that are located in the Windows folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%WINDIR%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Exe\fd686d83-a829-4351-8ff4-27c7de5755d2]
+"Value"="<FilePathRule Id=\"fd686d83-a829-4351-8ff4-27c7de5755d2\" Name=\"(Default Rule) All files\" Description=\"Allows members of the local Administrators group to run all applications.\" UserOrGroupSid=\"S-1-5-32-544\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Msi]
+"EnforcementMode"=dword:00000000
+"AllowWindows"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Msi\5b290184-345a-4453-b184-45305f6d9a54]
+"Value"="<FilePathRule Id=\"5b290184-345a-4453-b184-45305f6d9a54\" Name=\"(Default Rule) All Windows Installer files in %systemdrive%\\Windows\\Installer\" Description=\"Allows members of the Everyone group to run all Windows Installer files located in %systemdrive%\\Windows\\Installer.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%WINDIR%\\Installer\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Msi\64ad46ff-0d71-4fa0-a30b-3f3d30c5433d]
+"Value"="<FilePathRule Id=\"64ad46ff-0d71-4fa0-a30b-3f3d30c5433d\" Name=\"(Default Rule) All Windows Installer files\" Description=\"Allows members of the local Administrators group to run all Windows Installer files.\" UserOrGroupSid=\"S-1-5-32-544\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"*.*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Msi\b7af7102-efde-4369-8a89-7a6a392d1473]
+"Value"="<FilePublisherRule Id=\"b7af7102-efde-4369-8a89-7a6a392d1473\" Name=\"(Default Rule) All digitally signed Windows Installer files\" Description=\"Allows members of the Everyone group to run digitally signed Windows Installer files.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePublisherCondition PublisherName=\"*\" ProductName=\"*\" BinaryName=\"*\"><BinaryVersionRange LowSection=\"0.0.0.0\" HighSection=\"*\"/></FilePublisherCondition></Conditions></FilePublisherRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Script]
+"EnforcementMode"=dword:00000000
+"AllowWindows"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Script\06dce67b-934c-454f-a263-2515c8796a5d]
+"Value"="<FilePathRule Id=\"06dce67b-934c-454f-a263-2515c8796a5d\" Name=\"(Default Rule) All scripts located in the Program Files folder\" Description=\"Allows members of the Everyone group to run scripts that are located in the Program Files folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%PROGRAMFILES%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Script\9428c672-5fc3-47f4-808a-a0011f36dd2c]
+"Value"="<FilePathRule Id=\"9428c672-5fc3-47f4-808a-a0011f36dd2c\" Name=\"(Default Rule) All scripts located in the Windows folder\" Description=\"Allows members of the Everyone group to run scripts that are located in the Windows folder.\" UserOrGroupSid=\"S-1-1-0\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"%WINDIR%\\*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\Script\ed97d0cb-15ff-430f-b82c-8d7832957725]
+"Value"="<FilePathRule Id=\"ed97d0cb-15ff-430f-b82c-8d7832957725\" Name=\"(Default Rule) All scripts\" Description=\"Allows members of the local Administrators group to run all scripts.\" UserOrGroupSid=\"S-1-5-32-544\" Action=\"Allow\"><Conditions><FilePathCondition Path=\"*\"/></Conditions></FilePathRule>"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000001
+
