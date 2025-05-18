@@ -490,7 +490,6 @@ Windows Registry Editor Version 5.00
 "BackgroundModeEnabled"=dword:00000000
 "BasicAuthOverHttpEnabled"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000
-"BrowserLegacyExtensionPointsBlockingEnabled"=dword:00000001
 "BuiltInDnsClientEnabled"=dword:00000000
 "ConfigureFriendlyURLFormat"=dword:00000001
 "ConfigureShare"=dword:00000001
