@@ -419,7 +419,6 @@ Windows Registry Editor Version 5.00
 "ChromeCleanupEnabled"=dword:00000000
 "ChromeCleanupReportingEnabled"=dword:00000000
 "CloudPrintProxyEnabled"=dword:00000000
-"DefaultCookiesSetting"=dword:00000004
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultPopupsSetting"=dword:00000002
 "DefaultSearchProviderEnabled"=dword:00000001
@@ -495,7 +494,6 @@ Windows Registry Editor Version 5.00
 "BuiltInDnsClientEnabled"=dword:00000000
 "ConfigureFriendlyURLFormat"=dword:00000001
 "ConfigureShare"=dword:00000001
-"DefaultCookiesSetting"=dword:00000004
 "DefaultGeolocationSetting"=dword:00000002
 "DefaultPopupsSetting"=dword:00000002
 "DefaultWebBluetoothGuardSetting"=dword:00000002
