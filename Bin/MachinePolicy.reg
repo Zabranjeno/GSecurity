@@ -427,7 +427,6 @@ Windows Registry Editor Version 5.00
 "DefaultWebBluetoothGuardSetting"=dword:00000002
 "DefaultWebUsbGuardSetting"=dword:00000002
 "DeveloperToolsAvailability"=dword:00000002
-"DownloadRestrictions"=dword:00000001
 "EnableMediaRouter"=dword:00000000
 "EnableOnlineRevocationChecks"=dword:00000001
 "ImportAutofillFormData"=dword:00000000
@@ -498,7 +497,6 @@ Windows Registry Editor Version 5.00
 "DefaultWebBluetoothGuardSetting"=dword:00000002
 "DefaultWebUsbGuardSetting"=dword:00000002
 "DeveloperToolsAvailability"=dword:00000002
-"DownloadRestrictions"=dword:00000001
 "DynamicCodeSettings"=dword:00000001
 "EdgeCollectionsEnabled"=dword:00000000
 "EdgeEnhanceImagesEnabled"=dword:00000000
