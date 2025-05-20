@@ -10,6 +10,8 @@ rd /s /q "%windir%\SysWOW64\Group Policy"
 rd /s /q "%windir%\SysWOW64\Group Policy Users"
 Reg.exe delete "HKLM\SOFTWARE\Policies" /f
 Reg.exe delete "HKCU\Software\Policies" /f
+Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Editor" /f
+Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Objects" /f
 
 :: Consent
 takeown /f %windir%\system32\consent.exe /A
