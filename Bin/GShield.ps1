@@ -1,4 +1,4 @@
-# GShield Gorstak
+# GShield by Gorstak
 
 # Define paths and parameters
 $taskName = "GShieldStartup"
@@ -97,7 +97,54 @@ function Stop-ProcessUsingDLL {
     }
 }
 
-# Watch for newly created or changed DLL files
+function Set-FileOwnershipAndPermissions {
+    param ([string]$filePath)
+    try {
+        takeown /F $filePath /A | Out-Null
+        icacls $filePath /inheritance:d | Out-Null
+        icacls $filePath /grant "Administrators:F" | Out-Null
+        Write-Output "Forcibly set ownership and permissions for ${filePath}"
+        return $true
+    } catch {
+        Write-Output "Failed to set ownership/permissions for ${filePath}: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+function Is-SignedFileValid {
+    param ([string]$filePath)
+    try {
+        $signature = Get-AuthenticodeSignature -FilePath $filePath -ErrorAction Stop
+        Write-Output "Signature status: $($signature.Status) for ${filePath}"
+        return ($signature.Status -eq "Valid")
+    } catch {
+        Write-Output "Signature check failed for ${filePath}: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+function Quarantine-File {
+    param ([string]$filePath)
+    $maxRetries = 3
+    $retryCount = 0
+    $success = $false
+    while (-not $success -and $retryCount -lt $maxRetries) {
+        try {
+            $quarantinePath = Join-Path -Path $quarantineFolder -ChildPath (Split-Path $filePath -Leaf)
+            Move-Item -Path $filePath -Destination $quarantinePath -Force -ErrorAction Stop
+            Write-Output "Quarantined file: ${filePath} to $quarantinePath"
+            $success = $true
+        } catch {
+            Write-Output "Retry $($retryCount + 1)/$maxRetries - Failed to quarantine ${filePath}: $($_.Exception.Message)"
+            Start-Sleep -Seconds 1
+            $retryCount++
+        }
+    }
+    if (-not $success) {
+        Write-Output "Quarantine of ${filePath} failed after $maxRetries retries"
+    }
+}
+
 function Remove-UnsignedDLLs {
     param ([string]$changedPath)
 
@@ -117,13 +164,105 @@ function Remove-UnsignedDLLs {
     }
 }
 
-# Start background job to continuously monitor for rootkit activity
+# Start watchers on all drives
+try {
+    $drives = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.DriveType -in 2, 3, 4 }
+
+    foreach ($drive in $drives) {
+        try {
+            $path = $drive.DeviceID + "\"
+            Write-Output "Setting watcher on drive: $path"
+
+            $watcher = New-Object System.IO.FileSystemWatcher
+            $watcher.Path = $path
+            $watcher.IncludeSubdirectories = $true
+            $watcher.Filter = "*.dll"
+            $watcher.EnableRaisingEvents = $true
+
+            Register-ObjectEvent -InputObject $watcher -EventName "Created" -Action {
+                try {
+                    Start-Sleep -Milliseconds 500
+                    $event = $Event.SourceEventArgs
+                    $fullPath = $event.FullPath
+                    Remove-UnsignedDLLs -changedPath $fullPath
+                } catch {
+                    Write-Output "Watcher error (Created): $($_.Exception.Message)"
+                }
+            }
+
+            Register-ObjectEvent -InputObject $watcher -EventName "Changed" -Action {
+                try {
+                    Start-Sleep -Milliseconds 500
+                    $event = $Event.SourceEventArgs
+                    $fullPath = $event.FullPath
+                    Remove-UnsignedDLLs -changedPath $fullPath
+                } catch {
+                    Write-Output "Watcher error (Changed): $($_.Exception.Message)"
+                }
+            }
+
+        } catch {
+            Write-Output "Failed to start watcher on ${path}: $($_.Exception.Message)"
+        }
+    }
+} catch {
+    Write-Output "Error setting up watchers: $($_.Exception.Message)"
+}
+
+function Detect-RootkitByNetstat {
+    # Run netstat -ano and store the output
+    $netstatOutput = netstat -ano | Where-Object { $_ -match '\d+\.\d+\.\d+\.\d+:\d+' }
+
+    if (-not $netstatOutput) {
+        Write-Warning "No network connections found via netstat -ano. Possible rootkit hiding activity."
+
+        # Optionally: Log the suspicious event
+        $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+        $logFile = "$env:TEMP\rootkit_suspected_$timestamp.log"
+        "Netstat -ano returned no results. Possible rootkit activity." | Out-File -FilePath $logFile
+
+        # Get all running processes (you could refine this)
+        $processes = Get-Process | Where-Object { $_.Id -ne $PID }
+
+        foreach ($proc in $processes) {
+            try {
+                # Comment this line if you want to observe first
+                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+                Write-Output "Stopped process: $($proc.ProcessName) (PID: $($proc.Id))"
+            } catch {
+                Write-Warning "Could not stop process: $($proc.ProcessName) (PID: $($proc.Id))"
+            }
+        }
+    } else {
+        Write-Host "Netstat looks normal. Active connections detected."
+    }
+}
+
+function Stop-AllVMs {
+    $vmProcesses = @(
+        "vmware-vmx", "vmware", "vmware-tray", "vmwp", "vmnat", "vmnetdhcp", "vmware-authd", 
+        "vmms", "vmcompute", "vmsrvc", "vmwp", "hvhost", "vmmem", 
+        "VBoxSVC", "VBoxHeadless", "VirtualBoxVM", "VBoxManage", "qemu-system-x86_64", 
+        "qemu-system-i386", "qemu-system-arm", "qemu-system-aarch64", "kvm", "qemu-kvm", 
+        "prl_client_app", "prl_cc", "prl_tools_service", "prl_vm_app", "bhyve", "xen", 
+        "xenservice", "bochs", "dosbox", "utm", "wsl", "wslhost", "vmmem", "simics", 
+        "vbox", "parallels"
+    )
+    $processes = Get-Process -ErrorAction SilentlyContinue
+    $vmRunning = $processes | Where-Object { $vmProcesses -contains $_.Name }
+    if ($vmRunning) {
+        $vmRunning | Format-Table -Property Id, Name, Description -AutoSize
+        foreach ($process in $vmRunning) {
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+        }
+    }
+}
+
+# Start background job
 Start-Job -ScriptBlock {
     while ($true) {
         Stop-AllVMs
+        Remove-SuspiciousDLLs
         Detect-RootkitByNetstat
-        Start-Sleep -Seconds 60  # Sleep to prevent busy-looping
     }
 } | Out-Null
-
-Write-Output "Script started successfully and is now monitoring system activity."
