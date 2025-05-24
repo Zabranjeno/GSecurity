@@ -18,58 +18,86 @@ function Remove-SuspiciousDLLs {
     }
 }
 
-function Kill-ProcessesOnPorts {
-    # Define ports and port ranges
-    $portDefinitions = @(
-        "1-65535",     # Port range
+function Detect-AndBlockRootkit {
+    # Define legitimate applications and system processes
+    $allowedApps = @(
+        "httpd", "nginx", "w3wp", "tomcat", "node", "python", "ruby", "java",
+        "chrome", "firefox", "msedge", "opera", "safari", "brave", "vivaldi", "tor"
     )
+    $criticalProcesses = @(
+        "svchost", "csrss", "smss", "wininit", "services", "lsass", "winlogon", "System", "explorer"
+    )
+    $excludedProcesses = $allowedApps + $criticalProcesses
+    $logPath = "C:\Logs\RootkitDetection.log"
 
-    # Define critical processes to exclude
-$criticalProcesses = @(
-    "svchost",      # Service Host (protects DHCPCsvc, Dnscache, etc.)
-    "csrss",        # Client Server Runtime Process
-    "smss",         # Session Manager Subsystem
-    "wininit",      # Windows Start-Up Application
-    "services",     # Services and Controller app
-    "lsass",        # Local Security Authority Process
-    "winlogon",     # Windows Logon Application
-    "System",       # System process
-    "explorer",     # Windows Explorer
-    "chrome",       # Google Chrome
-    "firefox",      # Mozilla Firefox
-    "msedge",       # Microsoft Edge
-    "opera",        # Opera
-    "safari",       # Safari
-    "brave",        # Brave Browser
-    "vivaldi",      # Vivaldi Browser
-    "tor"           # Tor Browser
-)
-
-    # Expand port ranges into a flat list of ports
-    $expandedPorts = @()
-    foreach ($portDef in $portDefinitions) {
-        if ($portDef -is [string] -and $portDef -match "^(\d+)-(\d+)$") {
-            # It's a range (e.g., "8000-8100")
-            $startPort = [int]$Matches[1]
-            $endPort = [int]$Matches[2]
-            if ($startPort -le $endPort -and $startPort -ge 1 -and $endPort -le 65535) {
-                $expandedPorts += $startPort..$endPort
-            }
-        }
-        elseif ($portDef -is [int] -and $portDef -ge 1 -and $portDef -le 65535) {
-            # It's a single valid port
-            $expandedPorts += $portDef
-        }
+    # Create log directory
+    if (-not (Test-Path "C:\Logs")) {
+        New-Item -ItemType Directory -Path "C:\Logs" -Force | Out-Null
     }
 
-    # Get TCP connections in Listen state and filter by expanded ports
-    $connections = Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -in $expandedPorts }
+    # Get TCP connections (equivalent to netstat -ano)
+    $connections = Get-NetTCPConnection -ErrorAction SilentlyContinue | 
+        Where-Object { $_.State -eq "Listen" -or $_.State -eq "Established" }
+
+    if ($null -eq $connections) {
+        $logMessage = "$(Get-Date): No TCP connections detected (netstat -ano equivalent returned empty). Checking for suspicious traffic."
+        Write-Host $logMessage
+        Add-Content -Path $logPath -Value $logMessage
+        
+        # Check for non-local traffic as a fallback
+        $suspiciousTraffic = Get-NetTCPConnection -ErrorAction SilentlyContinue | 
+            Where-Object { $_.RemoteAddress -notlike "192.168.*" -and $_.RemoteAddress -notlike "10.*" -and $_.RemoteAddress -notlike "172.16.*" -and $_.RemoteAddress -ne "127.0.0.1" }
+        foreach ($traffic in $suspiciousTraffic) {
+            $remoteIP = $traffic.RemoteAddress
+            $remotePort = $traffic.RemotePort
+            $logMessage = "$(Get-Date): Detected suspicious non-local traffic to ${remoteIP}:${remotePort}. Blocking IP."
+            Write-Host $logMessage
+            Add-Content -Path $logPath -Value $logMessage
+            New-NetFirewallRule -DisplayName "Block-IP-$remoteIP" -Direction Inbound -RemoteAddress $remoteIP -Action Block -ErrorAction SilentlyContinue
+            New-NetFirewallRule -DisplayName "Block-IP-$remoteIP-Out" -Direction Outbound -RemoteAddress $remoteIP -Action Block -ErrorAction SilentlyContinue
+        }
+        return
+    }
+
     foreach ($conn in $connections) {
         $pid = $conn.OwningProcess
-        # Get the process name for the PID
         $process = Get-Process -Id $pid -ErrorAction SilentlyContinue
-        if ($process -and $criticalProcesses -notcontains $process.Name) {
-            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+        $localPort = $conn.LocalPort
+        $remotePort = $conn.RemotePort
+        $localIP = $conn.LocalAddress
+        $remoteIP = $conn.RemoteAddress
+        $state = $conn.State
+
+        # Check for invisible or unauthorized processes
+        if ($null -eq $process -or $excludedProcesses -notcontains $process.Name) {
+            $processName = if ($process) { $process.Name } else { "Unknown (Invisible)" }
+            $processPath = if ($process) { $process.Path } else { "N/A" }
+            $logMessage = "$(Get-Date): Detected unauthorized/invisible process (Name: $processName, PID: $pid) on Local: ${localIP}:${localPort}, Remote: ${remoteIP}:${remotePort}, State: $state, Path: $processPath"
+            Write-Host $logMessage
+            Add-Content -Path $logPath -Value $logMessage
+
+            # Kill the process if PID exists
+            if ($pid) {
+                Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+            }
+
+            # Block the port (local for Listen, remote for Established)
+            $targetPort = if ($state -eq "Listen") { $localPort } else { $remotePort }
+            $ruleName = "Block-Port-$targetPort"
+            New-NetFirewallRule -DisplayName $ruleName -Direction Inbound -Protocol TCP -LocalPort $targetPort -Action Block -ErrorAction SilentlyContinue
+            New-NetFirewallRule -DisplayName "$ruleName-Out" -Direction Outbound -Protocol TCP -LocalPort $targetPort -Action Block -ErrorAction SilentlyContinue
+
+            # Block local IP if not the PC itself (e.g., router)
+            if ($localIP -ne "0.0.0.0" -and $localIP -ne "127.0.0.1" -and $localIP -notlike "[::]*") {
+                New-NetFirewallRule -DisplayName "Block-IP-$localIP" -Direction Inbound -RemoteAddress $localIP -Action Block -ErrorAction SilentlyContinue
+                New-NetFirewallRule -DisplayName "Block-IP-$localIP-Out" -Direction Outbound -RemoteAddress $localIP -Action Block -ErrorAction SilentlyContinue
+            }
+
+            # Block remote IP if not local (e.g., C2 server)
+            if ($remoteIP -ne "0.0.0.0" -and $remoteIP -notlike "192.168.*" -and $remoteIP -notlike "10.*" -and $remoteIP -notlike "172.16.*") {
+                New-NetFirewallRule -DisplayName "Block-IP-$remoteIP" -Direction Inbound -RemoteAddress $remoteIP -Action Block -ErrorAction SilentlyContinue
+                New-NetFirewallRule -DisplayName "Block-IP-$remoteIP-Out" -Direction Outbound -RemoteAddress $remoteIP -Action Block -ErrorAction SilentlyContinue
+            }
         }
     }
 }
@@ -77,7 +105,7 @@ $criticalProcesses = @(
 function Stop-AllVMs {
     $vmProcesses = @(
         "vmware-vmx", "vmware", "vmware-tray", "vmwp", "vmnat", "vmnetdhcp", "vmware-authd", 
-        "vmware-usbarbitrator", "vmms", "vmcompute", "vmsrvc", "vmwp", "hvhost", "vmmem", 
+        "vmms", "vmcompute", "vmsrvc", "vmwp", "hvhost", "vmmem", 
         "VBoxSVC", "VBoxHeadless", "VirtualBoxVM", "VBoxManage", "qemu-system-x86_64", 
         "qemu-system-i386", "qemu-system-arm", "qemu-system-aarch64", "kvm", "qemu-kvm", 
         "prl_client_app", "prl_cc", "prl_tools_service", "prl_vm_app", "bhyve", "xen", 
@@ -88,7 +116,6 @@ function Stop-AllVMs {
     $vmRunning = $processes | Where-Object { $vmProcesses -contains $_.Name }
     if ($vmRunning) {
         $vmRunning | Format-Table -Property Id, Name, Description -AutoSize
-account
         foreach ($process in $vmRunning) {
             Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
         }
@@ -128,7 +155,7 @@ Start-Job -ScriptBlock {
     while ($true) {
         Stop-AllVMs
         Remove-SuspiciousDLLs
-        Kill-ProcessesOnPorts
-        Start-Sleep -Seconds 60  # Add delay to prevent excessive CPU usage
+        Detect-AndBlockRootkit
+        Start-Sleep -Seconds 60
     }
 } | Out-Null
