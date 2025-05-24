@@ -101,6 +101,5 @@ Start-Job -ScriptBlock {
         Stop-AllVMs
         Remove-SuspiciousDLLs
         Detect-RootkitByNetstat
-        Start-Sleep -Seconds 60
     }
 } | Out-Null
