@@ -153,7 +153,7 @@ for /d %%d in (A B C D E F G H I J K L M N O P Q R S T U V X W Y Z) do (
 takeown /f "%USERPROFILE%\Desktop" /A
 icacls "%USERPROFILE%\Desktop" /setowner "%username%" /t
 icacls "%USERPROFILE%\Desktop" /grant "%username%:(OI)(CI)F" /T
-icacls "%USERPROFILE%\Desktop" /inheritance:r
+icacls "%USERPROFILE%\Desktop" /inheritance:d
 icacls "%USERPROFILE%\Desktop" /remove "System"
 icacls "%USERPROFILE%\Desktop" /remove "Users"
 icacls "%USERPROFILE%\Desktop" /remove "Authenticated Users"
@@ -162,7 +162,7 @@ icacls "%USERPROFILE%\Desktop" /remove "Administrators"
 takeown /f "%SystemDrive%\Users\Public\Desktop" /A
 icacls "%SystemDrive%\Users\Public\Desktop" /setowner "%username%" /t
 icacls "%SystemDrive%\Users\Public\Desktop" /grant "%username%:(OI)(CI)F" /T
-icacls "%SystemDrive%\Users\Public\Desktop" /inheritance:r
+icacls "%SystemDrive%\Users\Public\Desktop" /inheritance:d
 icacls "%SystemDrive%\Users\Public\Desktop" /remove "Creator Owner"
 icacls "%SystemDrive%\Users\Public\Desktop" /remove "Batch"
 icacls "%SystemDrive%\Users\Public\Desktop" /remove "Service"
