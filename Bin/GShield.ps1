@@ -19,26 +19,23 @@ function Remove-SuspiciousDLLs {
 }
 
 function Detect-RootkitByNetstat {
-    Write-Host "Running netstat to check for listening or established connections..."
-
-    # Run netstat and filter for LISTENING or ESTABLISHED connections
-    $netstatOutput = netstat -ano | Where-Object { $_ -match 'LISTENING|ESTABLISHED' }
+    # Run netstat -ano and store the output
+    $netstatOutput = netstat -ano | Where-Object { $_ -match '\d+\.\d+\.\d+\.\d+:\d+' }
 
     if (-not $netstatOutput) {
-        Write-Warning "No LISTENING or ESTABLISHED connections found. This may indicate rootkit activity."
+        Write-Warning "No network connections found via netstat -ano. Possible rootkit hiding activity."
 
-        # Log the incident
+        # Optionally: Log the suspicious event
         $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
         $logFile = "$env:TEMP\rootkit_suspected_$timestamp.log"
-        "[$timestamp] netstat -ano returned no LISTENING or ESTABLISHED connections. Possible rootkit activity." | Out-File -FilePath $logFile
+        "Netstat -ano returned no results. Possible rootkit activity." | Out-File -FilePath $logFile
 
-        # Get all processes excluding this script
-        $currentPid = $PID
-        $processes = Get-Process | Where-Object { $_.Id -ne $currentPid }
+        # Get all running processes (you could refine this)
+        $processes = Get-Process | Where-Object { $_.Id -ne $PID }
 
         foreach ($proc in $processes) {
             try {
-                # Attempt to stop the process
+                # Comment this line if you want to observe first
                 Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
                 Write-Output "Stopped process: $($proc.ProcessName) (PID: $($proc.Id))"
             } catch {
@@ -46,7 +43,7 @@ function Detect-RootkitByNetstat {
             }
         }
     } else {
-        Write-Host "Active network connections detected. No rootkit symptoms found."
+        Write-Host "Netstat looks normal. Active connections detected."
     }
 }
 
