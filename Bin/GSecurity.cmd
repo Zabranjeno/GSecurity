@@ -12,21 +12,6 @@ Reg.exe delete "HKCU\Software\Policies" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Editor" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Objects" /f
 
-:: Consent
-takeown /f %windir%\system32\consent.exe /A
-icacls %windir%\system32\consent.exe /inheritance:r
-icacls %windir%\system32\consent.exe /grant:r "CONSOLE LOGON":RX
-icacls %windir%\system32\consent.exe /remove "ALL APPLICATION PACKAGES"
-icacls %windir%\system32\consent.exe /remove "ALL RESTRICTED APPLICATION PACKAGES"
-icacls %windir%\system32\consent.exe /remove "System"
-icacls %windir%\system32\consent.exe /remove "Users"
-icacls %windir%\system32\consent.exe /remove "Authenticated Users"
-icacls %windir%\system32\consent.exe /remove "Administrators"
-Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorAdmin" /t REG_DWORD /d "1" /f
-Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorUser" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorAdmin" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorUser" /t REG_DWORD /d "1" /f
-
 :: Enable Data Execution Prevention (DEP)
 PowerShell -ExecutionPolicy Unrestricted -Command "$registryPath = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer'; $data =  '0'; reg add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer' /v 'NoDataExecutionPrevention' /t 'REG_DWORD' /d "^""$data"^"" /f"
 PowerShell -ExecutionPolicy Unrestricted -Command "$registryPath = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\System'; $data =  '0'; reg add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\System' /v 'DisableHHDEP' /t 'REG_DWORD' /d "^""$data"^"" /f"
@@ -138,6 +123,21 @@ sc config LanmanServer start= disabled
 sc config seclogon start= disabled
 sc config Messenger start= disabled
 
+:: Consent
+takeown /f %windir%\system32\consent.exe /A
+icacls %windir%\system32\consent.exe /inheritance:r
+icacls %windir%\system32\consent.exe /grant:r "CONSOLE LOGON":RX
+icacls %windir%\system32\consent.exe /remove "ALL APPLICATION PACKAGES"
+icacls %windir%\system32\consent.exe /remove "ALL RESTRICTED APPLICATION PACKAGES"
+icacls %windir%\system32\consent.exe /remove "System"
+icacls %windir%\system32\consent.exe /remove "Users"
+icacls %windir%\system32\consent.exe /remove "Authenticated Users"
+icacls %windir%\system32\consent.exe /remove "Administrators"
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorAdmin" /t REG_DWORD /d "1" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorUser" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorAdmin" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "ConsentPromptBehaviorUser" /t REG_DWORD /d "1" /f
+
 :: Perms
 for /d %%d in (A B C D E F G H I J K L M N O P Q R S T U V X W Y Z) do (
     takeown /f %%d:\ /A
@@ -150,9 +150,24 @@ for /d %%d in (A B C D E F G H I J K L M N O P Q R S T U V X W Y Z) do (
     icacls %%d:\ /setowner "NT SERVICE\TrustedInstaller" /t
 )
 
-takeown /f "%SystemDrive%\Users\Public\Desktop"
-icacls "%SystemDrive%\Users\Public\Desktop" /inheritance:r
-icacls "%SystemDrive%\Users\Public\Desktop" /grant "%username%:(OI)(CI)M" /T
-takeown /f "%USERPROFILE%\Desktop"
+takeown /f "%USERPROFILE%\Desktop" /A
+icacls "%USERPROFILE%\Desktop" /setowner "%username%" /t
+icacls "%USERPROFILE%\Desktop" /grant "%username%:(OI)(CI)F" /T
 icacls "%USERPROFILE%\Desktop" /inheritance:r
-icacls "%USERPROFILE%\Desktop" /grant "%username%:(OI)(CI)M" /T
+icacls "%USERPROFILE%\Desktop" /remove "System"
+icacls "%USERPROFILE%\Desktop" /remove "Users"
+icacls "%USERPROFILE%\Desktop" /remove "Authenticated Users"
+icacls "%USERPROFILE%\Desktop" /remove "Administrators"
+
+takeown /f "%SystemDrive%\Users\Public\Desktop" /A
+icacls "%SystemDrive%\Users\Public\Desktop" /setowner "%username%" /t
+icacls "%SystemDrive%\Users\Public\Desktop" /grant "%username%:(OI)(CI)F" /T
+icacls "%SystemDrive%\Users\Public\Desktop" /inheritance:r
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Creator Owner"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Batch"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Service"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "INTERACTIVE"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "System"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Users"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Authenticated Users"
+icacls "%SystemDrive%\Users\Public\Desktop" /remove "Administrators"
