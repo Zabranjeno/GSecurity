@@ -19,11 +19,58 @@ function Remove-SuspiciousDLLs {
 }
 
 function Kill-ProcessesOnPorts {
-    $ports = @(80, 443, 8009, 8080, 8888)
-    $connections = Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -in $ports }
+    # Define ports and port ranges
+    $portDefinitions = @(
+        "1-65535",     # Port range
+    )
+
+    # Define critical processes to exclude
+$criticalProcesses = @(
+    "svchost",      # Service Host (protects DHCPCsvc, Dnscache, etc.)
+    "csrss",        # Client Server Runtime Process
+    "smss",         # Session Manager Subsystem
+    "wininit",      # Windows Start-Up Application
+    "services",     # Services and Controller app
+    "lsass",        # Local Security Authority Process
+    "winlogon",     # Windows Logon Application
+    "System",       # System process
+    "explorer",     # Windows Explorer
+    "chrome",       # Google Chrome
+    "firefox",      # Mozilla Firefox
+    "msedge",       # Microsoft Edge
+    "opera",        # Opera
+    "safari",       # Safari
+    "brave",        # Brave Browser
+    "vivaldi",      # Vivaldi Browser
+    "tor"           # Tor Browser
+)
+
+    # Expand port ranges into a flat list of ports
+    $expandedPorts = @()
+    foreach ($portDef in $portDefinitions) {
+        if ($portDef -is [string] -and $portDef -match "^(\d+)-(\d+)$") {
+            # It's a range (e.g., "8000-8100")
+            $startPort = [int]$Matches[1]
+            $endPort = [int]$Matches[2]
+            if ($startPort -le $endPort -and $startPort -ge 1 -and $endPort -le 65535) {
+                $expandedPorts += $startPort..$endPort
+            }
+        }
+        elseif ($portDef -is [int] -and $portDef -ge 1 -and $portDef -le 65535) {
+            # It's a single valid port
+            $expandedPorts += $portDef
+        }
+    }
+
+    # Get TCP connections in Listen state and filter by expanded ports
+    $connections = Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -in $expandedPorts }
     foreach ($conn in $connections) {
         $pid = $conn.OwningProcess
-        Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+        # Get the process name for the PID
+        $process = Get-Process -Id $pid -ErrorAction SilentlyContinue
+        if ($process -and $criticalProcesses -notcontains $process.Name) {
+            Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+        }
     }
 }
 
