@@ -122,3 +122,9 @@ sc config LanmanWorkstation start= disabled
 sc config LanmanServer start= disabled
 sc config seclogon start= disabled
 sc config Messenger start= disabled
+
+:: Perms
+icacls "C:\Users" /remove "Everyone"
+icacls "C:\Users\Public" /reset /t /c
+icacls "C:\Users\Public" /inheritance:r /grant:r Administrators:(OI)(CI)F SYSTEM:(OI)(CI)F Users:(OI)(CI)RX /t /c
+net share Public /delete
