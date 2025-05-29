@@ -3,15 +3,31 @@ Windows Registry Editor Version 5.00
 ; GSecurity
 ; Author: Gorstak
 
-; Block gay rapists
+; Enable Data Execution Prevention (DEP)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoDataExecutionPrevention"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\PersistentRoutes]
-"44.205.0.0,255.255.0.0,0.0.0.0,1"=""
-"18.15.0.0,255.255.0.0,0.0.0.0,1"=""
-"68.67.0.0,255.255.0.0,0.0.0.0,1"=""
-"3.91.0.0,255.255.0.0,0.0.0.0,1"=""
-"13.0.0.0,255.255.255.0,0.0.0.0,1"=""
-"34.0.0.0,255.255.255.0,0.0.0.0,1"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"DisableHHDEP"=dword:00000000
+
+; Disable DoH
+
+; Disable DNS over HTTPS (DoH) in Windows System Settings
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+"DoHPolicy"=dword:00000000
+
+; Disable DoH in Microsoft Edge
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"DnsOverHttpsMode"="off"
+"EncryptedClientHelloEnabled"=dword:00000000
+
+; Disable DoH for network adapters (system-wide)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"EnableDoH"=dword:00000000
+
+; Ensure no automatic DoH upgrades
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\DNS]
+"EnableAutoDoh"=dword:00000000
 
 ; Disable Trash
 
@@ -143,41 +159,6 @@ Windows Registry Editor Version 5.00
 "maxcacheentryttllimit"=dword:00002a30
 "netfailurecachetime"=dword:00000000
 "maxcachettl"=dword:00002a30
-
-; Ads blocking
-
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Dnscache\Parameters\DnsPolicyConfig\BlockAdDomains]
-"Name"="BlockAdDomains"
-"Key"="PolicyEntry"
-"PolicyType"=dword:00000001
-"Version"=dword:00000002
-"EntryType"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Dnscache\Parameters\DnsPolicyConfig\BlockAdDomains\PolicyEntry]
-"ad.doubleclick.net"="127.0.0.1"
-"static.doubleclick.net"="127.0.0.1"
-"r4---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"youtubeads.googleapis.com"="127.0.0.1"
-"r3---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"pubads.g.doubleclick.net"="127.0.0.1"
-"googleadservices.com"="127.0.0.1"
-"r9---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"r8---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"r7---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"r6---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"pagead2.googlesyndication.com"="127.0.0.1"
-"r5---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"r1---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"googleads.g.doubleclick.net"="127.0.0.1"
-"www.googletagservices.com"="127.0.0.1"
-"analytics.youtube.com"="127.0.0.1"
-"adservice.google.co.in"="127.0.0.1"
-"ads.youtube.com"="127.0.0.1"
-"partner.googleadservices.com"="127.0.0.1"
-"adservice.google.com"="127.0.0.1"
-"r2---sn-a5meknlz.googlevideo.com"="127.0.0.1"
-"video-stats.video.google.com"="127.0.0.1"
-"www.googleadservices.com"="127.0.0.1"
 
 ; Other tweaks
 
