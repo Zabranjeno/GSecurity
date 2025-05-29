@@ -12,9 +12,11 @@ Reg.exe delete "HKCU\Software\Policies" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Editor" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Objects" /f
 
-:: Enable Data Execution Prevention (DEP)
-PowerShell -ExecutionPolicy Unrestricted -Command "$registryPath = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer'; $data =  '0'; reg add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer' /v 'NoDataExecutionPrevention' /t 'REG_DWORD' /d "^""$data"^"" /f"
-PowerShell -ExecutionPolicy Unrestricted -Command "$registryPath = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\System'; $data =  '0'; reg add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\System' /v 'DisableHHDEP' /t 'REG_DWORD' /d "^""$data"^"" /f"
+:: Install Antivirus
+mkdir %windir%\Setup\Scripts
+mkdir %windir%\Setup\Scripts\Bin
+copy /y Antivirus.exe %windir%\Setup\Scripts\Bin\Antivirus.exe
+copy /y Antivirus.lnk %USERPROFILE%\Desktop\Antivirus.lnk
 
 :: Reset Windows Firewall to default (optional, comment out if not desired)
 netsh advfirewall reset
