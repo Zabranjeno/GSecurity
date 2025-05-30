@@ -44,12 +44,17 @@ function Install-Script {
     Copy-Item -Path $PSCommandPath -Destination $taskScriptPath -Force
     Log-Info "Script copied to $taskScriptPath"
 
+    # Unregister all tasks to prevent conflicts
+    $taskNames = @("MonitorCookiesLogon", "BackupCookiesOnStartup", "MonitorCookies", "ResetPasswordOnShutdown")
+    foreach ($taskName in $taskNames) {
+        Unregister-ScheduledTask -TaskName $taskName -Confirm:$false -ErrorAction SilentlyContinue
+    }
+
     # SYSTEM logon task
     $logonTaskName = "MonitorCookiesLogon"
     $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$taskScriptPath`""
     $trigger = New-ScheduledTaskTrigger -AtLogOn
     $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
-    Unregister-ScheduledTask -TaskName $logonTaskName -Confirm:$false -ErrorAction SilentlyContinue
     Register-ScheduledTask -TaskName $logonTaskName -Action $action -Trigger $trigger -Principal $principal
 
     # Startup backup task
@@ -60,11 +65,22 @@ function Install-Script {
 
     # Monitoring task (every 5 min)
     $monitorTaskName = "MonitorCookies"
-    $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1)
-    $trigger.RepetitionInterval = (New-TimeSpan -Minutes 5)
-    $trigger.RepetitionDuration = (New-TimeSpan -Days 365)
-    $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$taskScriptPath`" -Monitor"
-    Register-ScheduledTask -TaskName $monitorTaskName -Action $action -Trigger $trigger -Principal $principal
+    $taskService = New-Object -ComObject Schedule.Service
+    $taskService.Connect()
+    $taskDefinition = $taskService.NewTask(0)
+    $triggers = $taskDefinition.Triggers
+    $trigger = $triggers.Create(1) # 1 = TimeTrigger
+    $trigger.StartBoundary = (Get-Date).AddMinutes(1).ToString("yyyy-MM-dd'T'HH:mm:ss")
+    $trigger.Repetition.Interval = "PT5M" # 5 minutes
+    $trigger.Repetition.Duration = "P365D" # 365 days
+    $trigger.Enabled = $true
+    $action = $taskDefinition.Actions.Create(0)
+    $action.Path = "powershell.exe"
+    $action.Arguments = "-ExecutionPolicy Bypass -File `"$taskScriptPath`" -Monitor"
+    $taskDefinition.Settings.Enabled = $true
+    $taskDefinition.Settings.AllowDemandStart = $true
+    $taskDefinition.Settings.StartWhenAvailable = $true
+    $taskService.GetFolder("\").RegisterTaskDefinition($monitorTaskName, $taskDefinition, 6, "SYSTEM", $null, 4)
 
     # Shutdown password reset
     $shutdownTaskName = "ResetPasswordOnShutdown"
