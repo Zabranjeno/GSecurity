@@ -12,12 +12,6 @@ Reg.exe delete "HKCU\Software\Policies" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Editor" /f
 Reg.exe delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Group Policy Objects" /f
 
-:: Install Antivirus
-mkdir %windir%\Setup\Scripts
-mkdir %windir%\Setup\Scripts\Bin
-copy /y Antivirus.exe %windir%\Setup\Scripts\Bin\Antivirus.exe
-copy /y Antivirus.lnk %USERPROFILE%\Desktop\Antivirus.lnk
-
 :: Reset Windows Firewall to default (optional, comment out if not desired)
 netsh advfirewall reset
 

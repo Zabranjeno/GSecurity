@@ -1132,38 +1132,45 @@ function Schedule-Tasks {
     }
 }
 
-# Harden privilege rights
 function Harden-PrivilegeRights {
-    Write-Log "Applying privilege rights..."
-    $maxRetries = 3
-    $attempt = 0
-    while ($attempt -lt $maxRetries) {
-        try {
-            $cfgPath = [System.IO.Path]::GetTempFileName()
-            $privilegeSettings = @'
+    # Use here-string with proper formatting
+    $privilegeSettings = @'
 [Privilege Rights]
-SeDenyInteractiveLogonRight = Guest,*S-1-5-32-546
-SeDenyNetworkLogonRight = Guest,*S-1-5-32-546
-SeChangeNotifyPrivilege = *S-1-1-0
+SeDenyNetworkLogonRight = *S-1-5-21,*S-1-5-32-545,*S-1-5-32-584,*S-1-5-65-1,*S-1-5-13,*S-1-5-32-581,*S-1-5-18,*S-1-18-2,*S-1-5-6,*S-1-5-32-552,*S-1-5-32-580,*S-1-5-14,*S-1-5-32-555,*S-1-5-32-547,*S-1-5-32-558,*S-1-5-32-559,*S-1-3-4,*S-1-5-32-585,*S-1-5-20,*S-1-5-32-556,*S-1-5-2,*S-1-5-19,*S-1-5-114,*S-1-5-113,*S-1-5-17,*S-1-5-4,*S-1-5-32-568,*S-1-5-32-578,*S-1-5-32-546,Guest,*S-1-1-0,*S-1-5-32-573,*S-1-5-32-562,*S-1-5-1,*S-1-5-32-583,*S-1-5-32-569,*S-1-3-0,*S-1-3-1,*S-1-2-1,*S-1-5-3,*S-1-5-32-551,*S-1-18-1,*S-1-5-11,*S-1-5-7,*S-1-15-2-1,*S-1-15-2-2,*S-1-5-32-544,*S-1-5-32-579,*S-1-15-3
+SeDenyRemoteInteractiveLogonRight = *S-1-5-21,*S-1-5-32-545,*S-1-5-32-584,*S-1-5-65-1,*S-1-5-13,*S-1-5-32-581,*S-1-5-18,*S-1-18-2,*S-1-5-6,*S-1-5-32-552,*S-1-5-32-580,*S-1-5-14,*S-1-5-32-555,*S-1-5-32-547,*S-1-5-32-558,*S-1-5-32-559,*S-1-3-4,*S-1-5-32-585,*S-1-5-20,*S-1-5-32-556,*S-1-5-2,*S-1-5-19,*S-1-5-114,*S-1-5-113,*S-1-5-17,*S-1-5-4,*S-1-5-32-568,*S-1-5-32-578,*S-1-5-32-546,Guest,*S-1-1-0,*S-1-5-32-573,*S-1-5-32-562,*S-1-5-1,*S-1-5-32-583,*S-1-5-32-569,*S-1-3-0,*S-1-3-1,*S-1-2-1,*S-1-5-3,*S-1-5-32-551,*S-1-18-1,*S-1-5-11,*S-1-5-7,*S-1-15-2-1,*S-1-15-2-2,*S-1-5-32-544,*S-1-5-32-579,*S-1-15-3
+SeNetworkLogonRight=
+SeRemoteShutdownPrivilege=
+SeDebugPrivilege=
+SeRemoteInteractiveLogonRight=
 '@
-            secedit /export /cfg $cfgPath -ErrorAction Stop
-            Write-Log "Exported security policy to $cfgPath"
-            $privilegeSettings | Out-File -Append -FilePath $cfgPath -ErrorAction Stop
-            Write-Log "Appended privilege settings to $cfgPath"
-            secedit /configure /db c:\windows\security\local.sdb /cfg $cfgPath /areas USER_RIGHTS -ErrorAction Stop
-            Write-Log "Applied security policy from $cfgPath"
-            Remove-Item $cfgPath -Force -ErrorAction Stop
-            Write-Log "Privilege rights applied."
-            return
-        }
-        catch {
-            $attempt++
-            Write-Log "Error applying privilege rights (attempt $attempt): $_" -EntryType "Error"
-            if ($attempt -eq $maxRetries) { throw }
-            Start-Sleep -Seconds 5
+
+    # Consider using a more secure temporary path
+    $cfgPath = "$env:TEMP\secpol.cfg"
+    
+    # Add error handling
+    try {
+        # Export current security policy
+        secedit /export /cfg $cfgPath /quiet
+        
+        # Append new settings
+        $privilegeSettings | Out-File -Append -FilePath $cfgPath -ErrorAction Stop
+        
+        # Apply configuration
+        secedit /configure /db c:\windows\security\local.sdb /cfg $cfgPath /areas USER_RIGHTS /quiet
+    }
+    catch {
+        Write-Error "Error hardening privilege rights: $_"
+    }
+    finally {
+        # Clean up
+        if (Test-Path $cfgPath) {
+            Remove-Item $cfgPath -Force -ErrorAction SilentlyContinue
         }
     }
 }
+
+# Call the function
+Harden-PrivilegeRights
 
 # Generate a report of security status
 function Get-SecurityReport {
