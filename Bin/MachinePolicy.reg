@@ -426,7 +426,7 @@ Windows Registry Editor Version 5.00
 "DefaultSearchProviderSearchURL"="https://www.google.com/search?q={searchTerms}"
 "DefaultWebBluetoothGuardSetting"=dword:00000002
 "DefaultWebUsbGuardSetting"=dword:00000002
-"DeveloperToolsAvailability"=dword:00000002
+"DeveloperToolsAvailability"=dword:00000001
 "EnableMediaRouter"=dword:00000000
 "EnableOnlineRevocationChecks"=dword:00000001
 "ImportAutofillFormData"=dword:00000000
@@ -496,7 +496,7 @@ Windows Registry Editor Version 5.00
 "DefaultPopupsSetting"=dword:00000002
 "DefaultWebBluetoothGuardSetting"=dword:00000002
 "DefaultWebUsbGuardSetting"=dword:00000002
-"DeveloperToolsAvailability"=dword:00000002
+"DeveloperToolsAvailability"=dword:00000001
 "DynamicCodeSettings"=dword:00000001
 "EdgeCollectionsEnabled"=dword:00000000
 "EdgeEnhanceImagesEnabled"=dword:00000000
@@ -1308,7 +1308,7 @@ Windows Registry Editor Version 5.00
 "DisableOnline"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox]
-"DisableDeveloperTools"=dword:00000001
+"DisableDeveloperTools"=dword:00000000
 "DisableFeedbackCommands"=dword:00000001
 "DisableFirefoxAccounts"=dword:00000001
 "DisableFirefoxStudies"=dword:00000001
