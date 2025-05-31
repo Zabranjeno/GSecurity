@@ -30,14 +30,32 @@ function Enable-LsassPPL {
 # Function to clear cached credentials
 function Clear-CachedCredentials {
     try {
-        # Clear cached credentials from Credential Manager
-        cmdkey /list | ForEach-Object {
-            if ($_ -match "Target:") {
-                $target = $_ -replace ".*Target: (.*)", '$1'
-                cmdkey /delete:$target
+        # Check if cmdkey is available
+        $cmdkeyPath = "$env:SystemRoot\System32\cmdkey.exe"
+        if (Test-Path $cmdkeyPath) {
+            # Clear cached credentials using cmdkey
+            & $cmdkeyPath /list | ForEach-Object {
+                if ($_ -match "Target:") {
+                    $target = $_ -replace ".*Target: (.*)", '$1'
+                    & $cmdkeyPath /delete:$target
+                }
+            }
+            Write-Host "Cleared cached credentials from Credential Manager using cmdkey."
+        }
+        else {
+            Write-Warning "cmdkey.exe not found at $cmdkeyPath. Attempting alternative method to clear credentials."
+            # Attempt to use COM object to access Credential Manager
+            try {
+                $credMan = New-Object -ComObject WScript.Network
+                Write-Warning "COM-based credential clearing is not fully supported in this script. Manual cleanup may be required."
+                # Note: WScript.Network does not directly support credential enumeration/deletion.
+                # For full functionality, consider using a third-party module or manual cleanup.
+            }
+            catch {
+                Write-Error "No suitable method available to clear cached credentials. Please clear credentials manually via Control Panel > Credential Manager."
+                return
             }
         }
-        Write-Host "Cleared cached credentials from Credential Manager."
     }
     catch {
         Write-Error "Failed to clear cached credentials: $_"

