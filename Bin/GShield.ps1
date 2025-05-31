@@ -1,33 +1,5 @@
 # GShield.ps1 by Gorstak
 
-# Ensure the script isn't running multiple times
-$currentScript = $MyInvocation.MyCommand.Path
-$existingProcess = Get-Process | Where-Object {
-    $_.Path -eq $currentScript -and $_.Id -ne $PID
-}
-if ($existingProcess) {
-    Write-Host "The script is already running. Exiting."
-    exit
-}
-
-# Check admin privileges
-$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
-Write-Host "Running as admin: $isAdmin"
-
-# Initial log with diagnostics
-Write-Output "Script initialized. Admin: $isAdmin, User: $env:USERNAME, SID: $([Security.Principal.WindowsIdentity]::GetCurrent().User.Value)"
-
-# Ensure execution policy allows script
-if ((Get-ExecutionPolicy) -eq "Restricted") {
-    try {
-        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force -ErrorAction Stop
-        Write-Output "Set execution policy to Bypass for current process."
-    } catch {
-        Write-Output "Failed to set execution policy: $_"
-        exit 1
-    }
-}
-
 function Register-SystemLogonScript {
     param (
         [string]$TaskName = "RunGShieldAtLogon"
@@ -35,6 +7,15 @@ function Register-SystemLogonScript {
 
     # Define paths
     $scriptSource = $MyInvocation.MyCommand.Path
+    if (-not $scriptSource) {
+        # Fallback to determine script path
+        $scriptSource = $PSCommandPath
+        if (-not $scriptSource) {
+            Write-Output "Error: Could not determine script path."
+            return
+        }
+    }
+
     $targetFolder = "C:\Windows\Setup\Scripts\Bin"
     $targetPath = Join-Path $targetFolder (Split-Path $scriptSource -Leaf)
 
@@ -45,8 +26,13 @@ function Register-SystemLogonScript {
     }
 
     # Copy the script
-    Copy-Item -Path $scriptSource -Destination $targetPath -Force
-    Write-Output "Copied script to: $targetPath"
+    try {
+        Copy-Item -Path $scriptSource -Destination $targetPath -Force -ErrorAction Stop
+        Write-Output "Copied script to: $targetPath"
+    } catch {
+        Write-Output "Failed to copy script: $_"
+        return
+    }
 
     # Define the scheduled task action and trigger
     $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$targetPath`""
