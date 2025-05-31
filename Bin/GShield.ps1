@@ -52,56 +52,41 @@ function Register-SystemLogonScript {
 # Run the function
 Register-SystemLogonScript
 
-function Detect-RootkitByNetstat {
-    # Run netstat -ano and store the output
-    $netstatOutput = netstat -ano
+function Remove-SuspiciousFiles {
+    $drives = Get-PSDrive -PSProvider FileSystem | Where-Object { 
+        $_.DriveType -in @('Fixed', 'Removable', 'Network') 
+    }
 
-    if (-not $netstatOutput) {
-        # Log the event
-        $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-        $logFile = "$env:TEMP\rootkit_suspected_$timestamp.log"
-        "Netstat -ano returned empty result. Terminating all processes." | Out-File -FilePath $logFile
-
-        # Get all running processes (excluding this script's process)
-        $processes = Get-Process | Where-Object { $_.Id -ne $PID }
-
-        foreach ($proc in $processes) {
-            try {
-                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
-                Write-Output "Stopped process: $($proc.ProcessName) (PID: $($proc.Id))"
-            } catch {
-                Write-Warning "Could not stop process: $($proc.ProcessName) (PID: $($proc.Id))"
+    foreach ($drive in $drives) {
+        # Get all files recursively on the drive
+        $files = Get-ChildItem -Path $drive.Root -Recurse -File -ErrorAction SilentlyContinue
+        
+        # Get all processes and check if their ExecutablePath matches any file on the drive
+        $processes = Get-WmiObject Win32_Process | Where-Object {
+            $processPath = $_.ExecutablePath
+            if ($processPath) {
+                $files | Where-Object { $_.FullName -eq $processPath }
             }
         }
-    } else {
-        Write-Host "Netstat returned results. No action taken."
-    }
-}
 
-function Stop-AllVMs {
-    $vmProcesses = @(
-        "vmware-vmx", "vmware", "vmware-tray", "vmwp", "vmnat", "vmnetdhcp", "vmware-authd", 
-        "vmms", "vmcompute", "vmsrvc", "vmwp", "hvhost", "vmmem", 
-        "VBoxSVC", "VBoxHeadless", "VirtualBoxVM", "VBoxManage", "qemu-system-x86_64", 
-        "qemu-system-i386", "qemu-system-arm", "qemu-system-aarch64", "kvm", "qemu-kvm", 
-        "prl_client_app", "prl_cc", "prl_tools_service", "prl_vm_app", "bhyve", "xen", 
-        "xenservice", "bochs", "dosbox", "utm", "wsl", "wslhost", "vmmem", "simics", 
-        "vbox", "parallels"
-    )
-    $processes = Get-Process -ErrorAction SilentlyContinue
-    $vmRunning = $processes | Where-Object { $vmProcesses -contains $_.Name }
-    if ($vmRunning) {
-        $vmRunning | Format-Table -Property Id, Name, Description -AutoSize
-        foreach ($process in $vmRunning) {
-            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+        foreach ($process in $processes) {
+            $processName = $process.Name
+            $processPath = $process.ExecutablePath
+            $pid = $process.ProcessId
+
+            # Check if process name is suspicious or executable file does not exist
+            if ($processName -eq "Unknown" -or $processName -eq "N/A" -or $processName -eq "" -or ($processPath -and -not (Test-Path $processPath))) {
+                # Kill the process if PID exists
+                if ($pid) {
+                    Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
+                }
+            }
         }
     }
 }
 
-# Start background job
 Start-Job -ScriptBlock {
     while ($true) {
-        Stop-AllVMs
-        Detect-RootkitByNetstat
+        Remove-SuspiciousFiles
     }
-} | Out-Null
+}
