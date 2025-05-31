@@ -75,7 +75,7 @@ function Remove-SuspiciousFiles {
             $pid = $process.ProcessId
 
             # Check if process name is suspicious or executable file does not exist
-            if ($processName -eq "Unknown" -or $processName -eq "N/A" -or $processName -eq "" -or ($processPath -or -not (Test-Path $processPath))) {
+            if ($processName -eq "Unknown" -or $processName -eq "N/A" -or $processName -eq "" -or ($processPath -and -not (Test-Path $processPath))) {
                 # Kill the process if PID exists
                 if ($pid) {
                     Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
