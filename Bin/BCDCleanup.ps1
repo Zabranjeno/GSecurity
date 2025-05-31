@@ -21,7 +21,7 @@ $ExitCode = 0
 $BackupPath = "C:\BCD_Backup_$(Get-Date -Format 'yyyyMMdd_HHmmss').bcd"
 Write-Log "Creating BCD backup at $BackupPath"
 try {
-    bcdedit /export $BackupPath | Out-Null
+    %windir%\system32\bcdedit.exe /export $BackupPath | Out-Null
     Write-Log "BCD backup created successfully."
 } catch {
     Write-Log "Error creating BCD backup: $_"
@@ -31,7 +31,7 @@ try {
 
 # Get all BCD entries
 Write-Log "Enumerating all BCD entries..."
-$BcdOutput = bcdedit /enum all
+$BcdOutput = %windir%\system32\bcdedit.exe /enum all
 if (-not $BcdOutput) {
     Write-Log "Error: Failed to enumerate BCD entries."
     $ExitCode = 1
@@ -115,7 +115,7 @@ if ($SuspiciousEntries.Count -eq 0) {
         # Automatically delete the suspicious entry
         Write-Log "Deleting entry: $($entry.Identifier)"
         try {
-            bcdedit /delete $entry.Identifier /f | Out-Null
+            %windir%\system32\bcdedit.exe /delete $entry.Identifier /f | Out-Null
             Write-Log "Successfully deleted entry: $($entry.Identifier)"
         } catch {
             Write-Log "Error deleting entry $($entry.Identifier): $_"
@@ -126,7 +126,7 @@ if ($SuspiciousEntries.Count -eq 0) {
 
 # Verify cleanup
 Write-Log "Verifying BCD store after cleanup..."
-$BcdOutputAfter = bcdedit /enum all
+$BcdOutputAfter = %windir%\system32\bcdedit.exe /enum all
 if ($BcdOutputAfter) {
     $BcdOutputAfter | Out-File -FilePath $LogFile -Append
     Write-Log "Cleanup complete. Review the log at $LogFile for details."
